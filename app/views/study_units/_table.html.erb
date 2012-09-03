@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Abstract</th>
+    <th>Study</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @study_units.each do |study_unit| %>
+  <tr>
+    <td><%= study_unit.name %></td>
+    <td><%= study_unit.label %></td>
+    <td><%= study_unit.abstract %></td>
+    <td><%= study_unit.study_id %></td>
+    <td><%= link_to 'Show', study_unit %></td>
+    <td><%= link_to 'Edit', edit_study_unit_path(study_unit) %></td>
+    <td><%= link_to 'Destroy', study_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+

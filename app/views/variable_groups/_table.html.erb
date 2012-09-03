@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Logical product</th>
+    <th>Question</th>
+    <th>Concept</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @variable_groups.each do |variable_group| %>
+  <tr>
+    <td><%= variable_group.name %></td>
+    <td><%= variable_group.label %></td>
+    <td><%= variable_group.logical_product_id %></td>
+    <td><%= variable_group.question_id %></td>
+    <td><%= variable_group.concept_id %></td>
+    <td><%= link_to 'Show', variable_group %></td>
+    <td><%= link_to 'Edit', edit_variable_group_path(variable_group) %></td>
+    <td><%= link_to 'Destroy', variable_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+

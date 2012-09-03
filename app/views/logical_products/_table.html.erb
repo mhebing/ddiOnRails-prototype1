@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Abstract</th>
+    <th>Study unit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @logical_products.each do |logical_product| %>
+  <tr>
+    <td><%= logical_product.name %></td>
+    <td><%= logical_product.label %></td>
+    <td><%= logical_product.abstract %></td>
+    <td><%= logical_product.study_unit_id %></td>
+    <td><%= link_to 'Show', logical_product %></td>
+    <td><%= link_to 'Edit', edit_logical_product_path(logical_product) %></td>
+    <td><%= link_to 'Destroy', logical_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+

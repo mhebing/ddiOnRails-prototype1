@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Group</th>
+    <th>Logical product</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @physical_data_products.each do |physical_data_product| %>
+  <tr>
+    <td><%= physical_data_product.name %></td>
+    <td><%= physical_data_product.label %></td>
+    <td><%= physical_data_product.group_id %></td>
+    <td><%= physical_data_product.logical_product_id %></td>
+    <td><%= link_to 'Show', physical_data_product %></td>
+    <td><%= link_to 'Edit', edit_physical_data_product_path(physical_data_product) %></td>
+    <td><%= link_to 'Destroy', physical_data_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
