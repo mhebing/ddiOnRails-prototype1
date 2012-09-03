@@ -2,13 +2,34 @@
 <html>
 <head>
   <title>DdiOnRails</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%#= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag 'blueprint/screen', :media => "screen" %>
+  <%= stylesheet_link_tag 'blueprint/print', :media => "print" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div class="container">
+<div class="span-24">
+<p><b>Short links:</b>
+<%= link_to "Concepts", concept_groups_path %> |
+<%= link_to "Studies", studies_path %> |
+<%= link_to "Variables", variables_path %>
+</p>
+</div>
+
+<hr>
+
 <%= yield %>
+
+<hr>
+
+<div class="span-24">
+Footer
+</div>
+
+</div>
 
 </body>
 </html>
