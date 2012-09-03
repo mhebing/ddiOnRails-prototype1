@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="span-24">
+<h1><%= @physical_data_product.title %></h1>
+</h1>
 
+<hr>
+
+<div class="span-8">
+<div class="box">
 <p>
   <b>Name:</b>
   <%= @physical_data_product.name %>
@@ -19,7 +25,15 @@
   <b>Logical product:</b>
   <%= @physical_data_product.logical_product_id %>
 </p>
+</div>
 
-
+<% if can? :manage, @physical_data_product %>
 <%= link_to 'Edit', edit_physical_data_product_path(@physical_data_product) %> |
 <%= link_to 'Back', physical_data_products_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>Variables</h2>
+<%= render 'variables/table' %>
+</div>

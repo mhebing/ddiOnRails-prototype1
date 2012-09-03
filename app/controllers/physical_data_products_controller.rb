@@ -1,4 +1,7 @@
 class PhysicalDataProductsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /physical_data_products
   # GET /physical_data_products.json
   def index
@@ -14,6 +17,7 @@ class PhysicalDataProductsController < ApplicationController
   # GET /physical_data_products/1.json
   def show
     @physical_data_product = PhysicalDataProduct.find(params[:id])
+    @variables = @physical_data_product.variables
 
     respond_to do |format|
       format.html # show.html.erb

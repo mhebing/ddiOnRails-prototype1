@@ -1,4 +1,7 @@
 class DataCollectionsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /data_collections
   # GET /data_collections.json
   def index

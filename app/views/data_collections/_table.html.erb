@@ -2,22 +2,14 @@
   <tr>
     <th>Name</th>
     <th>Label</th>
-    <th>Abstract</th>
     <th>Study unit</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @data_collections.each do |data_collection| %>
   <tr>
-    <td><%= data_collection.name %></td>
+    <td><%= link_to data_collection.name, data_collection %></td>
     <td><%= data_collection.label %></td>
-    <td><%= data_collection.abstract %></td>
-    <td><%= data_collection.study_unit_id %></td>
-    <td><%= link_to 'Show', data_collection %></td>
-    <td><%= link_to 'Edit', edit_data_collection_path(data_collection) %></td>
-    <td><%= link_to 'Destroy', data_collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to data_collection.study_unit.name, data_collection.study_unit unless data_collection.study_unit.blank? %></td>
   </tr>
 <% end %>
 </table>

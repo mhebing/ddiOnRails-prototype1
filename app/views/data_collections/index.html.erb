@@ -1,5 +1,19 @@
-<h1>Listing data_collections</h1>
+<div class="span-24">
+<h1>Data Collections</h1>
+</div>
 
-<%= render 'table' %>
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
 
+<% if can? :manage, DataCollection %>
 <%= link_to 'New Data collection', new_data_collection_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>All Data Collections</h2>
+<%= render 'table' %>
+</div>

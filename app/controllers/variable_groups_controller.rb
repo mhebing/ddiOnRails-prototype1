@@ -1,4 +1,7 @@
 class VariableGroupsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /variable_groups
   # GET /variable_groups.json
   def index

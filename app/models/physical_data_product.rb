@@ -4,4 +4,8 @@ class PhysicalDataProduct < ActiveRecord::Base
   belongs_to :group
   belongs_to :logical_product
   has_many :variables
+
+  def title
+    if label.blank? then name else label end
+  end
 end

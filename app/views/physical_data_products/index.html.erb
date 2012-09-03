@@ -1,5 +1,21 @@
-<h1>Listing physical_data_products</h1>
+<div class="span-24">
+<h1>Physical Data Products</h1>
+</div>
 
-<%= render 'table' %>
+<hr>
 
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
+
+<% if can? :manage, PhysicalDataProduct %>
 <%= link_to 'New Physical data product', new_physical_data_product_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>All Physical Data Products</h2>
+<%= render 'table' %>
+</div>

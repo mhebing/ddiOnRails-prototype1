@@ -8,7 +8,7 @@
 <div class="box">
 <p>
   <b>Name:</b>
-  <%= @study_unit.name %>
+  <%= link_to @study_unit.name, @study_unit %>
 </p>
 
 <p>
@@ -23,7 +23,7 @@
 
 <p>
   <b>Study:</b>
-  <%= @study_unit.study_id %>
+  <%= link_to @study_unit.study.name, @study_unit.study unless @study_unit.study.blank? %>
 </p>
 </div>
 
@@ -34,5 +34,10 @@
 </div>
 
 <div class="span-16 last">
+<h2>Logical Products</h2>
 <%= render 'logical_products/table' %>
+
+<hr>
+<h2>Data Collections</h2>
+<%= render 'data_collections/table' %>
 </div>

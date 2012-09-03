@@ -1,5 +1,19 @@
-<h1>Listing study_units</h1>
+<div class="span-24">
+<h1>Study Units</h1>
+</div>
 
-<%= render 'table' %>
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
 
+<% if can? :manage, StudyUnit %>
 <%= link_to 'New Study unit', new_study_unit_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>All Study Units</h2>
+<%= render 'table' %>
+</div>

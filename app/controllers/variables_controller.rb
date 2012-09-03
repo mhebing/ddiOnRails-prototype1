@@ -1,4 +1,7 @@
 class VariablesController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /variables
   # GET /variables.json
   def index

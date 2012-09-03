@@ -1,4 +1,7 @@
 class LogicalProductsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /logical_products
   # GET /logical_products.json
   def index

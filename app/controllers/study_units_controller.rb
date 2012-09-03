@@ -18,6 +18,7 @@ class StudyUnitsController < ApplicationController
   def show
     @study_unit = StudyUnit.find(params[:id])
     @logical_products = @study_unit.logical_products
+    @data_collections = @study_unit.data_collections
 
     respond_to do |format|
       format.html # show.html.erb

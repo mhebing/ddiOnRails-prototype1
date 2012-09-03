@@ -3,4 +3,8 @@ class Variable < ActiveRecord::Base
 
   belongs_to :physical_data_product
   belongs_to :variable_group
+
+  def title
+    if label.blank? then name else label end
+  end
 end

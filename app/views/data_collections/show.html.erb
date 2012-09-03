@@ -1,8 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="span-24">
+<h1><%= @data_collection.title %></h1>
+</div>
 
+<hr>
+
+<div class="span-8">
+<div class="box">
 <p>
   <b>Name:</b>
-  <%= @data_collection.name %>
+  <%= link_to @data_collection.name, @data_collection %>
 </p>
 
 <p>
@@ -17,9 +23,12 @@
 
 <p>
   <b>Study unit:</b>
-  <%= @data_collection.study_unit_id %>
+  <%= link_to @data_collection.study_unit.name, @data_collection.study_unit unless @data_collection.study_unit.blank? %>
 </p>
+</div>
 
-
+<% if can? :manage, @data_collection %>
 <%= link_to 'Edit', edit_data_collection_path(@data_collection) %> |
 <%= link_to 'Back', data_collections_path %>
+<% end %>
+</div>
