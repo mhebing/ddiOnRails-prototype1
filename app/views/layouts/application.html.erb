@@ -11,6 +11,21 @@
 <body>
 
 <div class="container">
+
+<div class="span-24">
+<% if user_signed_in? %>
+  <p>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  </p>
+<% else %>
+  <p>
+  <%= link_to('Login', new_user_session_path)  %>
+  </p>
+<% end %>
+</div>
+
+<hr>
+
 <div class="span-24">
 <p><b>Short links:</b>
 <%= link_to "Concepts", concept_groups_path %> |
@@ -18,6 +33,17 @@
 <%= link_to "Variables", variables_path %>
 </p>
 </div>
+
+<% unless notice.blank? & alert.blank? %>
+<div class="span-24">
+<% unless notice.blank? %>
+<p class="notice"><%= notice %></p>
+<% end %>
+<% unless alert.blank? %>
+<p class="alert"><%= alert %></p>
+<% end %>
+</div>
+<% end %>
 
 <hr>
 

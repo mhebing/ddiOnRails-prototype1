@@ -1,5 +1,12 @@
-<p id="notice"><%= notice %></p>
 
+<div class="span-24">
+<h1><%= @concept_group.title %></h1>
+</div>
+
+<hr>
+
+<div class="span-8">
+<div class="box">
 <p>
   <b>Name:</b>
   <%= @concept_group.name %>
@@ -14,7 +21,14 @@
   <b>Abstract:</b>
   <%= @concept_group.abstract %>
 </p>
+</div>
 
-
+<% if can? :manage, @concept_group %>
 <%= link_to 'Edit', edit_concept_group_path(@concept_group) %> |
 <%= link_to 'Back', concept_groups_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<%= render 'concepts/table' %>
+</div>

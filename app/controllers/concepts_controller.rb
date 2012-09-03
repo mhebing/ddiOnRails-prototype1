@@ -1,4 +1,7 @@
 class ConceptsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /concepts
   # GET /concepts.json
   def index

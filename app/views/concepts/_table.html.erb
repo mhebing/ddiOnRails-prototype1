@@ -2,22 +2,14 @@
   <tr>
     <th>Name</th>
     <th>Label</th>
-    <th>Abstract</th>
     <th>Concept group</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @concepts.each do |concept| %>
   <tr>
-    <td><%= concept.name %></td>
+    <td><%= link_to concept.name, concept %></td>
     <td><%= concept.label %></td>
-    <td><%= concept.abstract %></td>
-    <td><%= concept.concept_group_id %></td>
-    <td><%= link_to 'Show', concept %></td>
-    <td><%= link_to 'Edit', edit_concept_path(concept) %></td>
-    <td><%= link_to 'Destroy', concept, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to concept.concept_group.name, concept.concept_group %></td>
   </tr>
 <% end %>
 </table>

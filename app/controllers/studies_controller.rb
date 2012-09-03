@@ -1,4 +1,7 @@
 class StudiesController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /studies
   # GET /studies.json
   def index
@@ -14,6 +17,8 @@ class StudiesController < ApplicationController
   # GET /studies/1.json
   def show
     @study = Study.find(params[:id])
+    @study_units = @study.study_units
+    @groups = @study.groups
 
     respond_to do |format|
       format.html # show.html.erb

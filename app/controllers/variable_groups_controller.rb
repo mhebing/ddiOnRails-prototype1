@@ -14,6 +14,7 @@ class VariableGroupsController < ApplicationController
   # GET /variable_groups/1.json
   def show
     @variable_group = VariableGroup.find(params[:id])
+    @variables = @variable_group.variables
 
     respond_to do |format|
       format.html # show.html.erb

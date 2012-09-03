@@ -3,4 +3,8 @@ class Study < ActiveRecord::Base
 
   has_many :groups
   has_many :study_units
+
+  def title
+    if label.blank? then name else label end
+  end
 end

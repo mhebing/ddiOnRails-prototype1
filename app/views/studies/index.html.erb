@@ -1,5 +1,20 @@
+<div class="span-24">
 <h1>Listing studies</h1>
+</div>
 
-<%= render 'table' %>
+<hr>
 
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
+
+<% if can? :manage, Study %>
 <%= link_to 'New Study', new_study_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<%= render 'table' %>
+</div>

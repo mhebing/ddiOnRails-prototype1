@@ -1,5 +1,21 @@
-<h1>Listing concept_groups</h1>
 
-<%= render 'table' %>
+<div class="span-24">
+<h1>Concept Groups</h1>
+</div>
 
+<hr>
+
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
+
+<% if can? :manage, ConceptGroup %>
 <%= link_to 'New Concept group', new_concept_group_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<%= render 'table' %>
+</div>

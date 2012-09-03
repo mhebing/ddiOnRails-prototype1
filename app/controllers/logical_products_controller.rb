@@ -14,6 +14,7 @@ class LogicalProductsController < ApplicationController
   # GET /logical_products/1.json
   def show
     @logical_product = LogicalProduct.find(params[:id])
+    @variable_groups = @logical_product.variable_groups
 
     respond_to do |format|
       format.html # show.html.erb

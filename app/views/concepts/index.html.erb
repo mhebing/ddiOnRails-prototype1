@@ -1,5 +1,21 @@
-<h1>Listing concepts</h1>
 
-<%= render 'table' %>
+<div class="span-24">
+<h1>Concepts</h1>
+</div>
 
+<hr>
+
+<div class="span-8">
+<div class="box">
+<h2>About Concepts</h2>
+<%= render 'about' %>
+</div>
+
+<% if can? :manage, Concept %>
 <%= link_to 'New Concept', new_concept_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<%= render 'table' %>
+</div>

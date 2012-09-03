@@ -1,5 +1,20 @@
-<h1>Listing logical_products</h1>
+<div class="span-24">
+<h1>logical Products</h1>
+</div>
 
-<%= render 'table' %>
+<hr>
 
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
+
+<% if can? :manage, LogicalProduct %>
 <%= link_to 'New Logical product', new_logical_product_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<%= render 'table' %>
+</div>

@@ -1,4 +1,7 @@
 class StudyUnitsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /study_units
   # GET /study_units.json
   def index
@@ -14,6 +17,7 @@ class StudyUnitsController < ApplicationController
   # GET /study_units/1.json
   def show
     @study_unit = StudyUnit.find(params[:id])
+    @logical_products = @study_unit.logical_products
 
     respond_to do |format|
       format.html # show.html.erb

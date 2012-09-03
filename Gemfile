@@ -8,6 +8,16 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 
+
+# mhebing
+gem 'devise'
+gem 'RedCloth'
+gem 'cancan'
+gem 'annotate'
+gem 'rails-erd'
+
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

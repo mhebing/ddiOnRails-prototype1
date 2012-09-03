@@ -1,4 +1,7 @@
 class ConceptGroupsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /concept_groups
   # GET /concept_groups.json
   def index
@@ -14,6 +17,7 @@ class ConceptGroupsController < ApplicationController
   # GET /concept_groups/1.json
   def show
     @concept_group = ConceptGroup.find(params[:id])
+    @concepts = @concept_group.concepts
 
     respond_to do |format|
       format.html # show.html.erb

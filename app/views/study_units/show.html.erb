@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="span-24">
+<h1><%= @study_unit.title %><h2>
+</div>
 
+<hr>
+
+<div class="span-8">
+<div class="box">
 <p>
   <b>Name:</b>
   <%= @study_unit.name %>
@@ -19,7 +25,14 @@
   <b>Study:</b>
   <%= @study_unit.study_id %>
 </p>
+</div>
 
-
+<% if can? :manage, @study_unit %>
 <%= link_to 'Edit', edit_study_unit_path(@study_unit) %> |
 <%= link_to 'Back', study_units_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<%= render 'logical_products/table' %>
+</div>

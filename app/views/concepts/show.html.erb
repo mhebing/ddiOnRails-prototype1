@@ -1,8 +1,15 @@
-<p id="notice"><%= notice %></p>
 
+<div class="span-16">
+<h1><%= @concept.title %></h1>
+</div>
+
+<hr>
+
+<div class="span-8">
+<div class="box">
 <p>
   <b>Name:</b>
-  <%= @concept.name %>
+  <%= link_to @concept.name, @concept %>
 </p>
 
 <p>
@@ -17,9 +24,12 @@
 
 <p>
   <b>Concept group:</b>
-  <%= @concept.concept_group_id %>
+  <%= link_to @concept.concept_group.name, @concept.concept_group %>
 </p>
+</div>
 
-
+<% if can? :manage, @concept %>
 <%= link_to 'Edit', edit_concept_path(@concept) %> |
 <%= link_to 'Back', concepts_path %>
+<% end %>
+</div>
