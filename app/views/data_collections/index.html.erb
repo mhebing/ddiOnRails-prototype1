@@ -1,0 +1,29 @@
+<h1>Listing data_collections</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Abstract</th>
+    <th>Study unit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @data_collections.each do |data_collection| %>
+  <tr>
+    <td><%= data_collection.name %></td>
+    <td><%= data_collection.label %></td>
+    <td><%= data_collection.abstract %></td>
+    <td><%= data_collection.study_unit_id %></td>
+    <td><%= link_to 'Show', data_collection %></td>
+    <td><%= link_to 'Edit', edit_data_collection_path(data_collection) %></td>
+    <td><%= link_to 'Destroy', data_collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Data collection', new_data_collection_path %>

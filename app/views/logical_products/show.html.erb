@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @logical_product.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @logical_product.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @logical_product.abstract %>
+</p>
+
+<p>
+  <b>Study unit:</b>
+  <%= @logical_product.study_unit_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_logical_product_path(@logical_product) %> |
+<%= link_to 'Back', logical_products_path %>

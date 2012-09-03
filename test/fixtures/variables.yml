@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  label: MyString
+  physical_data_product_id: 1
+  variable_group_id: 1
+
+two:
+  name: MyString
+  label: MyString
+  physical_data_product_id: 1
+  variable_group_id: 1

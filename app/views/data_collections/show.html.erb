@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @data_collection.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @data_collection.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @data_collection.abstract %>
+</p>
+
+<p>
+  <b>Study unit:</b>
+  <%= @data_collection.study_unit_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_data_collection_path(@data_collection) %> |
+<%= link_to 'Back', data_collections_path %>

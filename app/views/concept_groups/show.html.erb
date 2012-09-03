@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @concept_group.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @concept_group.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @concept_group.abstract %>
+</p>
+
+
+<%= link_to 'Edit', edit_concept_group_path(@concept_group) %> |
+<%= link_to 'Back', concept_groups_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @physical_data_product.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @physical_data_product.label %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @physical_data_product.group_id %>
+</p>
+
+<p>
+  <b>Logical product:</b>
+  <%= @physical_data_product.logical_product_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_physical_data_product_path(@physical_data_product) %> |
+<%= link_to 'Back', physical_data_products_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @study_unit.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @study_unit.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @study_unit.abstract %>
+</p>
+
+<p>
+  <b>Study:</b>
+  <%= @study_unit.study_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_study_unit_path(@study_unit) %> |
+<%= link_to 'Back', study_units_path %>

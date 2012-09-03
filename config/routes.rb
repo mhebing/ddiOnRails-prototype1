@@ -1,4 +1,26 @@
 DdiOnRails::Application.routes.draw do
+  resources :variables
+
+  resources :variable_groups
+
+  resources :questions
+
+  resources :concepts
+
+  resources :concept_groups
+
+  resources :physical_data_products
+
+  resources :groups
+
+  resources :data_collections
+
+  resources :logical_products
+
+  resources :study_units
+
+  resources :studies
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

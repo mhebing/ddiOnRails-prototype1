@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @variable.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @variable.label %>
+</p>
+
+<p>
+  <b>Physical data product:</b>
+  <%= @variable.physical_data_product_id %>
+</p>
+
+<p>
+  <b>Variable group:</b>
+  <%= @variable.variable_group_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_variable_path(@variable) %> |
+<%= link_to 'Back', variables_path %>
