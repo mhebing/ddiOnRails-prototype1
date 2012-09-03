@@ -1,5 +1,21 @@
-<h1>Listing groups</h1>
+<div class="span-24">
+<h1>Groups</h1>
+</div>
 
-<%= render 'table' %>
+<hr>
 
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
+
+<% if can? :manage, Group %>
 <%= link_to 'New Group', new_group_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>All Groups</h2>
+<%= render 'table' %>
+</div>

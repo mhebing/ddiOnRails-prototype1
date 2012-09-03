@@ -1,8 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="span-24">
+<h1><%= @group.title %></h1>
+</div>
 
+<hr>
+
+<div class="span-8">
+<div class="box">
 <p>
   <b>Name:</b>
-  <%= @group.name %>
+  <%= link_to @group.name, @group %>
 </p>
 
 <p>
@@ -17,9 +23,17 @@
 
 <p>
   <b>Study:</b>
-  <%= @group.study_id %>
+  <%= link_to @group.study.name, @group.study %>
 </p>
+</div>
 
-
+<% if can? :manage, @group %>
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>Physical Data Products</h2>
+<%= render 'physical_data_products/table' %>
+</div>
