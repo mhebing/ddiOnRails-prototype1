@@ -17,6 +17,7 @@ class ConceptsController < ApplicationController
   # GET /concepts/1.json
   def show
     @concept = Concept.find(params[:id])
+    @variable_groups = @concept.variable_groups
 
     respond_to do |format|
       format.html # show.html.erb

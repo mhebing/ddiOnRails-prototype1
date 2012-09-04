@@ -1,5 +1,21 @@
-<h1>Listing questions</h1>
+<div class="span-24">
+<h1>Questions</h1>
+</div>
 
-<%= render 'table' %>
+<hr>
 
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
+
+<% if can? :manage, Question %>
 <%= link_to 'New Question', new_question_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>All Questions</h2>
+<%= render 'table' %>
+</div>

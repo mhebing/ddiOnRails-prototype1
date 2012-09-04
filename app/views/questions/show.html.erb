@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="span-24">
+<h1><%= @question.title %></h1>
+</div>
 
+<hr>
+
+<div class="span-8">
+<div class="box">
 <p>
   <b>Name:</b>
   <%= @question.name %>
@@ -19,7 +25,10 @@
   <b>Description:</b>
   <%= @question.description %>
 </p>
+</div>
 
-
+<% if can? :manage, @question %>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
+<% end %>
+</div>
