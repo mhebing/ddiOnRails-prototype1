@@ -16,3 +16,6 @@
 
 # mhebing: Ignore content of import folder
 /import/*
+
+# mhebing: Ignore: erd.pdf
+/erd.pdf
