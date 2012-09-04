@@ -1,0 +1,12 @@
+<div class="span-24">
+<h1>Baskets</h1>
+</div>
+
+<hr>
+
+
+<%= render 'table' %>
+
+<% if can? :manage, Basket %>
+<%= link_to 'New Basket', new_basket_path %>
+<% end %>

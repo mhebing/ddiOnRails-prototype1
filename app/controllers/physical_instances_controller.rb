@@ -1,4 +1,7 @@
 class PhysicalInstancesController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /physical_instances
   # GET /physical_instances.json
   def index

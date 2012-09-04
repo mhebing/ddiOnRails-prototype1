@@ -5,6 +5,7 @@ class VariableGroup < ActiveRecord::Base
   belongs_to :concept
   belongs_to :question
   has_many :variables
+  has_and_belongs_to_many :baskets
 
   def title
     if label.blank? then name else label end
