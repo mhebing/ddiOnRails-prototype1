@@ -18,6 +18,7 @@ class PhysicalDataProductsController < ApplicationController
   def show
     @physical_data_product = PhysicalDataProduct.find(params[:id])
     @variables = @physical_data_product.variables
+    @physical_instances = @physical_data_product.physical_instances
 
     respond_to do |format|
       format.html # show.html.erb

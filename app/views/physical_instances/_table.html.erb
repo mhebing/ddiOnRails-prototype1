@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Physical data product</th>
+  </tr>
+
+<% @physical_instances.each do |physical_instance| %>
+  <tr>
+    <td><%= link_to physical_instance.name, physical_instance %></td>
+    <td><%= physical_instance.label %></td>
+    <td><%= link_to physical_instance.physical_data_product.name,
+      physical_instance.physical_data_product unless
+      physical_instance.physical_data_product.blank? %></td>
+  </tr>
+<% end %>
+</table>

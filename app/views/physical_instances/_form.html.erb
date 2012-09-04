@@ -1,0 +1,45 @@
+<%= form_for(@physical_instance) do |f| %>
+  <% if @physical_instance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@physical_instance.errors.count, "error") %> prohibited this physical_instance from being saved:</h2>
+
+      <ul>
+      <% @physical_instance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :physical_data_product_id %><br />
+    <%= f.number_field :physical_data_product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :filename %><br />
+    <%= f.text_field :filename %>
+  </div>
+  <div class="field">
+    <%= f.label :format %><br />
+    <%= f.text_field :format %>
+  </div>
+  <div class="field">
+    <%= f.label :fingerprint %><br />
+    <%= f.text_field :fingerprint %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

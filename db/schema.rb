@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904104811) do
+ActiveRecord::Schema.define(:version => 20120904121153) do
 
   create_table "concept_groups", :force => true do |t|
     t.string   "name"
@@ -64,6 +64,18 @@ ActiveRecord::Schema.define(:version => 20120904104811) do
     t.integer  "logical_product_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "physical_instances", :force => true do |t|
+    t.integer  "physical_data_product_id"
+    t.string   "name"
+    t.string   "label"
+    t.text     "description"
+    t.string   "filename"
+    t.string   "format"
+    t.string   "fingerprint"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "questions", :force => true do |t|

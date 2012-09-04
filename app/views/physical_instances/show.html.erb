@@ -1,0 +1,16 @@
+<div class="span-24">
+<h1><%= @physical_instance.title %></h1>
+</div>
+
+<hr>
+
+<div class="span-8">
+<div class="box">
+<%= render 'info' %>
+</div>
+
+<% if can? :manage, @physical_instance %>
+<%= link_to 'Edit', edit_physical_instance_path(@physical_instance) %> |
+<%= link_to 'Back', physical_instances_path %>
+<% end %>
+</div>

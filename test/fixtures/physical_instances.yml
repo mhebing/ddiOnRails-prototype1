@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  physical_data_product_id: 1
+  name: MyString
+  label: MyString
+  description: MyText
+  filename: MyString
+  format: MyString
+  fingerprint: MyString
+
+two:
+  physical_data_product_id: 1
+  name: MyString
+  label: MyString
+  description: MyText
+  filename: MyString
+  format: MyString
+  fingerprint: MyString

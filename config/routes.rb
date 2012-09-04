@@ -1,4 +1,6 @@
 DdiOnRails::Application.routes.draw do
+  resources :physical_instances
+
   resources :variable_categories
 
   resources :variable_statistics
