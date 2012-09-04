@@ -1,0 +1,7 @@
+
+<%= render 'info' %>
+
+<% if can? :manage, @variable_category %>
+<%= link_to 'Edit', edit_variable_category_path(@variable_category) %> |
+<%= link_to 'Back', variable_categories_path %>
+<% end %>

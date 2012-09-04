@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  variable_id: 1
+  valid: 1
+  invalid: 1
+  mean: 9.99
+  min: 9.99
+  max: 9.99
+
+two:
+  variable_id: 1
+  valid: 1
+  invalid: 1
+  mean: 9.99
+  min: 9.99
+  max: 9.99

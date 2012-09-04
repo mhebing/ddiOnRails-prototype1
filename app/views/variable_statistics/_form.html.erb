@@ -1,0 +1,29 @@
+<%= form_for(@variable_statistic) do |f| %>
+  <% if @variable_statistic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@variable_statistic.errors.count, "error") %> prohibited this variable_statistic from being saved:</h2>
+
+      <ul>
+      <% @variable_statistic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :variable_id %><br />
+    <%= f.number_field :variable_id %>
+  </div>
+  <div class="field">
+    <%= f.label :statistic %><br />
+    <%= f.text_field :statistic %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+
+<%= render 'info' %>
+
+<% if can? :manage, @variable_statistics %>
+<%= link_to 'Edit', edit_variable_statistic_path(@variable_statistic) %> |
+<%= link_to 'Back', variable_statistics_path %>
+<% end %>

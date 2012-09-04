@@ -4,6 +4,7 @@
 
 <hr>
 
+<div class="span-24">
 <div class="span-8">
 <div class="box">
 <p>
@@ -32,3 +33,21 @@
 <%= link_to 'Back', variables_path %>
 <% end %>
 </div>
+
+<% unless @variable_statistics.blank? %>
+<div class="span-8">
+<h2>Statistics</h2>
+<%= render 'variable_statistics/table' %>
+</div>
+<% end %>
+
+<% unless @variable_categories.blank? %>
+<div class="span-8 last">
+<h2>Categories</h2>
+<%= render 'variable_categories/table' %>
+</div>
+<% end %>
+
+</div>
+
+

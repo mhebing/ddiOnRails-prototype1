@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Statistic</th>
+    <th>Value</th>
+  </tr>
+
+<% @variable_statistics.each do |variable_statistic| %>
+  <tr>
+    <td><%= variable_statistic.variable_id %></td>
+    <td><%= variable_statistic.statistic %></td>
+    <td><%= variable_statistic.value %></td>
+  </tr>
+<% end %>
+</table>
+

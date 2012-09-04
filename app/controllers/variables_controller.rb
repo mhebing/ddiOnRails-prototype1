@@ -17,6 +17,8 @@ class VariablesController < ApplicationController
   # GET /variables/1.json
   def show
     @variable = Variable.find(params[:id])
+    @variable_statistics = @variable.variable_statistics
+    @variable_categories = @variable.variable_categories
 
     respond_to do |format|
       format.html # show.html.erb

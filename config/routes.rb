@@ -1,4 +1,8 @@
 DdiOnRails::Application.routes.draw do
+  resources :variable_categories
+
+  resources :variable_statistics
+
   devise_for :users
 
   root to: "static_pages#home"

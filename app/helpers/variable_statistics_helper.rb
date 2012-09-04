@@ -1,0 +1,2 @@
+module VariableStatisticsHelper
+end

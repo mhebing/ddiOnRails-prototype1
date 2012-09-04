@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903134229) do
+ActiveRecord::Schema.define(:version => 20120904093352) do
 
   create_table "concept_groups", :force => true do |t|
     t.string   "name"
@@ -120,6 +120,15 @@ ActiveRecord::Schema.define(:version => 20120903134229) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
+  create_table "variable_categories", :force => true do |t|
+    t.integer  "variable_id"
+    t.integer  "value"
+    t.string   "label"
+    t.integer  "frequency"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "variable_groups", :force => true do |t|
     t.string   "name"
     t.string   "label"
@@ -128,6 +137,12 @@ ActiveRecord::Schema.define(:version => 20120903134229) do
     t.integer  "concept_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "variable_statistics", :force => true do |t|
+    t.integer "variable_id"
+    t.decimal "value"
+    t.string  "statistic"
   end
 
   create_table "variables", :force => true do |t|
