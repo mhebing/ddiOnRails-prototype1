@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904123732) do
+ActiveRecord::Schema.define(:version => 20120904131145) do
 
   create_table "baskets", :force => true do |t|
     t.string   "name"
@@ -91,6 +91,19 @@ ActiveRecord::Schema.define(:version => 20120904123732) do
     t.datetime "updated_at",               :null => false
   end
 
+  create_table "publications", :force => true do |t|
+    t.string   "author"
+    t.string   "name"
+    t.integer  "year"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "publications_user_profiles", :id => false, :force => true do |t|
+    t.integer "publication_id"
+    t.integer "user_profile_id"
+  end
+
   create_table "questions", :force => true do |t|
     t.string   "name"
     t.string   "label"
@@ -116,6 +129,14 @@ ActiveRecord::Schema.define(:version => 20120904123732) do
     t.integer  "study_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

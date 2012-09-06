@@ -15,7 +15,7 @@ gem 'RedCloth'
 gem 'cancan'
 gem 'annotate'
 gem 'rails-erd'
-
+gem 'nokogiri'
 
 
 # Gems used only for assets and not required

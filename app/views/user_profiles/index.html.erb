@@ -1,0 +1,15 @@
+<div class="span-24">
+<h1>User Profiles</h1>
+</div>
+
+<hr>
+
+<div class="span-8">
+<% if can? :manage, UserProfile %>
+<%= link_to 'New User profile', new_user_profile_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<%= render 'table' %>
+</div>

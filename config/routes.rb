@@ -1,4 +1,8 @@
 DdiOnRails::Application.routes.draw do
+  resources :publications
+
+  resources :user_profiles
+
   resources :baskets
 
   resources :physical_instances
