@@ -5,7 +5,7 @@ class ConceptGroupsController < ApplicationController
   # GET /concept_groups
   # GET /concept_groups.json
   def index
-    @concept_groups = ConceptGroup.all
+    @concept_groups = ConceptGroup.find_all_by_parent_id(nil)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,6 +18,8 @@ class ConceptGroupsController < ApplicationController
   def show
     @concept_group = ConceptGroup.find(params[:id])
     @concepts = @concept_group.concepts
+    @concept_groups = @concept_group.concept_groups
+    @parent = @concept_group.parent
 
     respond_to do |format|
       format.html # show.html.erb

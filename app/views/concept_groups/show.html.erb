@@ -7,20 +7,7 @@
 
 <div class="span-8">
 <div class="box">
-<p>
-  <b>Name:</b>
-  <%= @concept_group.name %>
-</p>
-
-<p>
-  <b>Label:</b>
-  <%= @concept_group.label %>
-</p>
-
-<p>
-  <b>Abstract:</b>
-  <%= @concept_group.abstract %>
-</p>
+<%= render 'info' %>
 </div>
 
 <% if can? :manage, @concept_group %>
@@ -30,6 +17,11 @@
 </div>
 
 <div class="span-16 last">
+<h2>Sub-Concepts</h2>
+<%= render 'concept_groups/table' %>
+
+<hr>
+
 <h2>Concepts in <%= @concept_group.title %></h2>
 <%= render 'concepts/table' %>
 </div>

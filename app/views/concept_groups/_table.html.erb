@@ -2,12 +2,16 @@
   <tr>
     <th>Name</th>
     <th>Label</th>
+    <th>Subgroups</th>
+    <th>Concepts</th>
   </tr>
 
 <% @concept_groups.each do |concept_group| %>
   <tr>
     <td><%= link_to concept_group.name, concept_group %></td>
     <td><%= concept_group.label %></td>
+    <td><%= concept_group.concept_groups.count %></td>
+    <td><%= concept_group.concepts.count%></td>
   </tr>
 <% end %>
 </table>

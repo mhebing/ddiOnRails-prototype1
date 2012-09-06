@@ -1,0 +1,21 @@
+<p>
+  <b>Name:</b>
+  <%= @concept_group.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @concept_group.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @concept_group.abstract %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= link_to @concept_group.parent.name,
+    @concept_group.parent unless
+    @concept_group.parent.blank? %>
+</p>
