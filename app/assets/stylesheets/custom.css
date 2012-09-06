@@ -1,0 +1,11 @@
+
+tbody tr:nth-child(even) td, tbody tr.even td {background:lightgrey;}
+
+.box {background:lightgrey;}
+
+a, a:visited {color: black;}
+
+a:hover, a:focus, a:active {color: #9e1310;
+  background: none;}
+
+a:link:after, a:visited:after {content: none;}
