@@ -7,25 +7,8 @@
 
 <div class="span-8">
 <div class="box">
-<p>
-  <b>Name:</b>
-  <%= link_to @concept.name, @concept %>
-</p>
-
-<p>
-  <b>Label:</b>
-  <%= @concept.label %>
-</p>
-
-<p>
-  <b>Abstract:</b>
-  <%= @concept.abstract %>
-</p>
-
-<p>
-  <b>Concept group:</b>
-  <%= link_to @concept.concept_group.name, @concept.concept_group unless @concept.concept_group.blank? %>
-</p>
+<h2>Concept</h2>
+<%= render 'info' %>
 </div>
 
 <% if can? :manage, @concept %>

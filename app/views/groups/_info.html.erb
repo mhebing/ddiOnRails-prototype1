@@ -1,0 +1,21 @@
+
+<p>
+  <b>Name:</b>
+  <%= link_to @group.name, @group %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @group.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= raw RedCloth.new(@group.abstract).to_html unless @group.abstract.blank? %>
+</p>
+
+<p>
+  <b>Study:</b>
+  <%= link_to @group.study.name, @group.study %>
+</p>
+

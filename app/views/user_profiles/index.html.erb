@@ -1,10 +1,15 @@
 <div class="span-24">
-<h1>User Profiles</h1>
+<h1>Public User Profiles</h1>
 </div>
 
 <hr>
 
 <div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
+
 <% if can? :manage, UserProfile %>
 <%= link_to 'New User profile', new_user_profile_path %>
 <% end %>

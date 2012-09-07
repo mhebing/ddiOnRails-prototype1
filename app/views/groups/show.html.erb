@@ -6,25 +6,8 @@
 
 <div class="span-8">
 <div class="box">
-<p>
-  <b>Name:</b>
-  <%= link_to @group.name, @group %>
-</p>
-
-<p>
-  <b>Label:</b>
-  <%= @group.label %>
-</p>
-
-<p>
-  <b>Abstract:</b>
-  <%= @group.abstract %>
-</p>
-
-<p>
-  <b>Study:</b>
-  <%= link_to @group.study.name, @group.study %>
-</p>
+<h2>Group</h2>
+<%= render 'info' %>
 </div>
 
 <% if can? :manage, @group %>

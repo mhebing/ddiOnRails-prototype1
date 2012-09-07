@@ -5,7 +5,7 @@ class UserProfilesController < ApplicationController
   # GET /user_profiles
   # GET /user_profiles.json
   def index
-    @user_profiles = UserProfile.all
+    @user_profiles = UserProfile.find_all_by_make_public(true)
 
     respond_to do |format|
       format.html # index.html.erb

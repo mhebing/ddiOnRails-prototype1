@@ -10,7 +10,7 @@
 
 <p>
   <b>Abstract:</b>
-  <%= @concept_group.abstract %>
+  <%= raw RedCloth.new(@concept_group.abstract).to_html unless @concept_group.abstract.blank? %>
 </p>
 
 <p>

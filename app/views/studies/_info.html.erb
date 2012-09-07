@@ -1,0 +1,21 @@
+
+<p>
+  <b>Name:</b>
+  <%= @study.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @study.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= raw RedCloth.new(@study.abstract).to_html unless @study.abstract.blank? %>
+</p>
+
+<p>
+  <b>Universe:</b>
+  <%= @study.universe %>
+</p>
+

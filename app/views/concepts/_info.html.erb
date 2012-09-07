@@ -1,0 +1,21 @@
+
+<p>
+  <b>Name:</b>
+  <%= link_to @concept.name, @concept %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @concept.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= raw RedCloth.new(@concept.abstract).to_html unless @concept.abstract.blank? %>
+</p>
+
+<p>
+  <b>Concept group:</b>
+  <%= link_to @concept.concept_group.name, @concept.concept_group unless @concept.concept_group.blank? %>
+</p>
+
