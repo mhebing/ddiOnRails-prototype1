@@ -24,7 +24,7 @@
 
 <p>
   <b>Concept group:</b>
-  <%= link_to @concept.concept_group.name, @concept.concept_group %>
+  <%= link_to @concept.concept_group.name, @concept.concept_group unless @concept.concept_group.blank? %>
 </p>
 </div>
 
