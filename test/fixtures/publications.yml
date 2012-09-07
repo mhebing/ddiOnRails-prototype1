@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: publications
+#
+#  id         :integer          not null, primary key
+#  author     :string(255)
+#  name       :string(255)
+#  year       :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

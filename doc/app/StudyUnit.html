@@ -99,6 +99,12 @@
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
+    <li><a href="./Basket.html">Basket</a>
+  
+    <li><a href="./BasketsController.html">BasketsController</a>
+  
+    <li><a href="./BasketsHelper.html">BasketsHelper</a>
+  
     <li><a href="./Concept.html">Concept</a>
   
     <li><a href="./ConceptGroup.html">ConceptGroup</a>
@@ -135,13 +141,23 @@
   
     <li><a href="./PhysicalDataProductsHelper.html">PhysicalDataProductsHelper</a>
   
+    <li><a href="./PhysicalInstance.html">PhysicalInstance</a>
+  
+    <li><a href="./PhysicalInstancesController.html">PhysicalInstancesController</a>
+  
+    <li><a href="./PhysicalInstancesHelper.html">PhysicalInstancesHelper</a>
+  
+    <li><a href="./Publication.html">Publication</a>
+  
+    <li><a href="./PublicationsController.html">PublicationsController</a>
+  
+    <li><a href="./PublicationsHelper.html">PublicationsHelper</a>
+  
     <li><a href="./Question.html">Question</a>
   
     <li><a href="./QuestionsController.html">QuestionsController</a>
   
     <li><a href="./QuestionsHelper.html">QuestionsHelper</a>
-  
-    <li><a href="./Role.html">Role</a>
   
     <li><a href="./StaticPagesController.html">StaticPagesController</a>
   
@@ -161,13 +177,31 @@
   
     <li><a href="./User.html">User</a>
   
+    <li><a href="./UserProfile.html">UserProfile</a>
+  
+    <li><a href="./UserProfilesController.html">UserProfilesController</a>
+  
+    <li><a href="./UserProfilesHelper.html">UserProfilesHelper</a>
+  
     <li><a href="./Variable.html">Variable</a>
+  
+    <li><a href="./VariableCategoriesController.html">VariableCategoriesController</a>
+  
+    <li><a href="./VariableCategoriesHelper.html">VariableCategoriesHelper</a>
+  
+    <li><a href="./VariableCategory.html">VariableCategory</a>
   
     <li><a href="./VariableGroup.html">VariableGroup</a>
   
     <li><a href="./VariableGroupsController.html">VariableGroupsController</a>
   
     <li><a href="./VariableGroupsHelper.html">VariableGroupsHelper</a>
+  
+    <li><a href="./VariableStatistic.html">VariableStatistic</a>
+  
+    <li><a href="./VariableStatisticsController.html">VariableStatisticsController</a>
+  
+    <li><a href="./VariableStatisticsHelper.html">VariableStatisticsHelper</a>
   
     <li><a href="./VariablesController.html">VariablesController</a>
   
@@ -184,6 +218,18 @@
 
   <div id="description" class="description">
     
+<h2 id="label-Schema+Information">Schema Information</h2>
+
+<p>Table name: study_units</p>
+
+<pre>id         :integer          not null, primary key
+name       :string(255)
+label      :string(255)
+abstract   :text
+study_id   :integer
+created_at :datetime         not null
+updated_at :datetime         not null</pre>
+
   </div><!-- description -->
 
   
@@ -220,7 +266,7 @@
 
           
           <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/study_unit.rb, line 8</span>
+            <pre><span class="ruby-comment"># File app/models/study_unit.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

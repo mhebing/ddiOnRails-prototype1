@@ -64,17 +64,7 @@
 </nav>
 
     
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
     
-    <li><a href="#method-i-role-3F">#role?</a>
-    
-  </ul>
-</nav>
-
   </div>
 
   <div id="project-metadata">
@@ -98,6 +88,12 @@
     <li><a href="./ApplicationController.html">ApplicationController</a>
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Basket.html">Basket</a>
+  
+    <li><a href="./BasketsController.html">BasketsController</a>
+  
+    <li><a href="./BasketsHelper.html">BasketsHelper</a>
   
     <li><a href="./Concept.html">Concept</a>
   
@@ -135,13 +131,23 @@
   
     <li><a href="./PhysicalDataProductsHelper.html">PhysicalDataProductsHelper</a>
   
+    <li><a href="./PhysicalInstance.html">PhysicalInstance</a>
+  
+    <li><a href="./PhysicalInstancesController.html">PhysicalInstancesController</a>
+  
+    <li><a href="./PhysicalInstancesHelper.html">PhysicalInstancesHelper</a>
+  
+    <li><a href="./Publication.html">Publication</a>
+  
+    <li><a href="./PublicationsController.html">PublicationsController</a>
+  
+    <li><a href="./PublicationsHelper.html">PublicationsHelper</a>
+  
     <li><a href="./Question.html">Question</a>
   
     <li><a href="./QuestionsController.html">QuestionsController</a>
   
     <li><a href="./QuestionsHelper.html">QuestionsHelper</a>
-  
-    <li><a href="./Role.html">Role</a>
   
     <li><a href="./StaticPagesController.html">StaticPagesController</a>
   
@@ -161,13 +167,31 @@
   
     <li><a href="./User.html">User</a>
   
+    <li><a href="./UserProfile.html">UserProfile</a>
+  
+    <li><a href="./UserProfilesController.html">UserProfilesController</a>
+  
+    <li><a href="./UserProfilesHelper.html">UserProfilesHelper</a>
+  
     <li><a href="./Variable.html">Variable</a>
+  
+    <li><a href="./VariableCategoriesController.html">VariableCategoriesController</a>
+  
+    <li><a href="./VariableCategoriesHelper.html">VariableCategoriesHelper</a>
+  
+    <li><a href="./VariableCategory.html">VariableCategory</a>
   
     <li><a href="./VariableGroup.html">VariableGroup</a>
   
     <li><a href="./VariableGroupsController.html">VariableGroupsController</a>
   
     <li><a href="./VariableGroupsHelper.html">VariableGroupsHelper</a>
+  
+    <li><a href="./VariableStatistic.html">VariableStatistic</a>
+  
+    <li><a href="./VariableStatisticsController.html">VariableStatisticsController</a>
+  
+    <li><a href="./VariableStatisticsHelper.html">VariableStatisticsHelper</a>
   
     <li><a href="./VariablesController.html">VariablesController</a>
   
@@ -184,6 +208,25 @@
 
   <div id="description" class="description">
     
+<h2 id="label-Schema+Information">Schema Information</h2>
+
+<p>Table name: users</p>
+
+<pre>id                     :integer          not null, primary key
+email                  :string(255)      default(&quot;&quot;), not null
+encrypted_password     :string(255)      default(&quot;&quot;), not null
+reset_password_token   :string(255)
+reset_password_sent_at :datetime
+remember_created_at    :datetime
+sign_in_count          :integer          default(0)
+current_sign_in_at     :datetime
+last_sign_in_at        :datetime
+current_sign_in_ip     :string(255)
+last_sign_in_ip        :string(255)
+created_at             :datetime         not null
+updated_at             :datetime         not null
+admin                  :boolean</pre>
+
   </div><!-- description -->
 
   
@@ -200,42 +243,6 @@
 
     <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-role-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">role?</span><span
-            class="method-args">(role)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="role-3F-source">
-            <pre><span class="ruby-comment"># File app/models/user.rb, line 14</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">role?</span>(<span class="ruby-identifier">role</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">roles</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">role</span>.<span class="ruby-identifier">to_s</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- role-3F-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- role-3F-method -->
-
-    
-    </section><!-- public-instance-method-details -->
-  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->

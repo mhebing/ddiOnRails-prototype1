@@ -111,6 +111,12 @@
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
+    <li><a href="./Basket.html">Basket</a>
+  
+    <li><a href="./BasketsController.html">BasketsController</a>
+  
+    <li><a href="./BasketsHelper.html">BasketsHelper</a>
+  
     <li><a href="./Concept.html">Concept</a>
   
     <li><a href="./ConceptGroup.html">ConceptGroup</a>
@@ -147,13 +153,23 @@
   
     <li><a href="./PhysicalDataProductsHelper.html">PhysicalDataProductsHelper</a>
   
+    <li><a href="./PhysicalInstance.html">PhysicalInstance</a>
+  
+    <li><a href="./PhysicalInstancesController.html">PhysicalInstancesController</a>
+  
+    <li><a href="./PhysicalInstancesHelper.html">PhysicalInstancesHelper</a>
+  
+    <li><a href="./Publication.html">Publication</a>
+  
+    <li><a href="./PublicationsController.html">PublicationsController</a>
+  
+    <li><a href="./PublicationsHelper.html">PublicationsHelper</a>
+  
     <li><a href="./Question.html">Question</a>
   
     <li><a href="./QuestionsController.html">QuestionsController</a>
   
     <li><a href="./QuestionsHelper.html">QuestionsHelper</a>
-  
-    <li><a href="./Role.html">Role</a>
   
     <li><a href="./StaticPagesController.html">StaticPagesController</a>
   
@@ -173,13 +189,31 @@
   
     <li><a href="./User.html">User</a>
   
+    <li><a href="./UserProfile.html">UserProfile</a>
+  
+    <li><a href="./UserProfilesController.html">UserProfilesController</a>
+  
+    <li><a href="./UserProfilesHelper.html">UserProfilesHelper</a>
+  
     <li><a href="./Variable.html">Variable</a>
+  
+    <li><a href="./VariableCategoriesController.html">VariableCategoriesController</a>
+  
+    <li><a href="./VariableCategoriesHelper.html">VariableCategoriesHelper</a>
+  
+    <li><a href="./VariableCategory.html">VariableCategory</a>
   
     <li><a href="./VariableGroup.html">VariableGroup</a>
   
     <li><a href="./VariableGroupsController.html">VariableGroupsController</a>
   
     <li><a href="./VariableGroupsHelper.html">VariableGroupsHelper</a>
+  
+    <li><a href="./VariableStatistic.html">VariableStatistic</a>
+  
+    <li><a href="./VariableStatisticsController.html">VariableStatisticsController</a>
+  
+    <li><a href="./VariableStatisticsHelper.html">VariableStatisticsHelper</a>
   
     <li><a href="./VariablesController.html">VariablesController</a>
   
@@ -232,7 +266,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 46</span>
+            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:physical_data_product</span>])
 
@@ -272,7 +306,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 78</span>
+            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@physical_data_product</span>.<span class="ruby-identifier">destroy</span>
@@ -308,7 +342,7 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 40</span>
+            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
   <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -373,7 +407,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 30</span>
+            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">new</span>
 
@@ -412,6 +446,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
   <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@variables</span> = <span class="ruby-ivar">@physical_data_product</span>.<span class="ruby-identifier">variables</span>
+  <span class="ruby-ivar">@physical_instances</span> = <span class="ruby-ivar">@physical_data_product</span>.<span class="ruby-identifier">physical_instances</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># show.html.erb</span>
@@ -444,7 +479,7 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 62</span>
+            <pre><span class="ruby-comment"># File app/controllers/physical_data_products_controller.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
