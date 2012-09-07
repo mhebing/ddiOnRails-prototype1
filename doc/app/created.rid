@@ -1,4 +1,4 @@
-Fri, 07 Sep 2012 08:56:52 +0200
+Fri, 07 Sep 2012 09:42:58 +0200
 doc/README_FOR_APP	Mon, 03 Sep 2012 10:01:59 +0200
 app/helpers/variable_groups_helper.rb	Mon, 03 Sep 2012 10:10:33 +0200
 app/helpers/variables_helper.rb	Mon, 03 Sep 2012 10:10:39 +0200
@@ -31,7 +31,7 @@ app/models/concept_group.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/models/variable_statistic.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/models/variable_group.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/models/variable_category.rb	Fri, 07 Sep 2012 08:56:40 +0200
-app/models/ability.rb	Tue, 04 Sep 2012 13:10:10 +0200
+app/models/ability.rb	Fri, 07 Sep 2012 09:22:58 +0200
 app/models/variable.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/models/data_collection.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/models/concept.rb	Fri, 07 Sep 2012 08:56:40 +0200
@@ -39,7 +39,7 @@ app/models/basket.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/models/question.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/models/user_profile.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/controllers/study_units_controller.rb	Mon, 03 Sep 2012 20:38:49 +0200
-app/controllers/user_profiles_controller.rb	Thu, 06 Sep 2012 09:58:33 +0200
+app/controllers/user_profiles_controller.rb	Fri, 07 Sep 2012 09:26:06 +0200
 app/controllers/variable_statistics_controller.rb	Tue, 04 Sep 2012 10:55:27 +0200
 app/controllers/questions_controller.rb	Mon, 03 Sep 2012 20:41:08 +0200
 app/controllers/variables_controller.rb	Tue, 04 Sep 2012 11:47:02 +0200
@@ -47,7 +47,7 @@ app/controllers/physical_instances_controller.rb	Tue, 04 Sep 2012 14:43:36 +0200
 app/controllers/concepts_controller.rb	Tue, 04 Sep 2012 08:18:38 +0200
 app/controllers/groups_controller.rb	Mon, 03 Sep 2012 20:40:44 +0200
 app/controllers/studies_controller.rb	Mon, 03 Sep 2012 19:34:06 +0200
-app/controllers/publications_controller.rb	Tue, 04 Sep 2012 15:11:20 +0200
+app/controllers/publications_controller.rb	Fri, 07 Sep 2012 09:40:03 +0200
 app/controllers/application_controller.rb	Mon, 03 Sep 2012 16:28:29 +0200
 app/controllers/data_collections_controller.rb	Mon, 03 Sep 2012 20:40:36 +0200
 app/controllers/variable_groups_controller.rb	Mon, 03 Sep 2012 20:41:35 +0200

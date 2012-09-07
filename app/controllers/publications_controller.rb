@@ -1,4 +1,7 @@
 class PublicationsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /publications
   # GET /publications.json
   def index
