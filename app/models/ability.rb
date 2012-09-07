@@ -9,8 +9,9 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :manage, Basket, user_id: user.id
-      can :manage, UserProfile, user_id: user.id
+      cannot :read, [Basket, UserProfile]
+      can :read, [Basket, UserProfile], make_public: true
+      can :manage, [Basket, UserProfile], user_id: user.id
     end
     
     # The first argument to `can` is the action you are giving the user permission to do.
