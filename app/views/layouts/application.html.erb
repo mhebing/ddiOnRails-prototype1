@@ -28,7 +28,10 @@
 <hr>
 
 <div class="span-24">
-<p><b>Short links:</b>
+<p>
+<b><%= link_to "Home", "/" %></b>
+|
+<b>Short links:</b>
 <%= link_to "ConceptGroups", concept_groups_path %> |
 <%= link_to "Studies", studies_path %> |
 <%= link_to "Variables", variables_path %>
@@ -57,7 +60,7 @@ Footer
 </div>
 
 <hr>
-<%= debug(assigns) %>
+<%#= debug(assigns) %>
 
 </div>
 

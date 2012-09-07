@@ -1,2 +1,22 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="span-24">
+<h1>ddiOnRails | Home</h1>
+</div>
+
+<hr>
+
+<div class="span-8">
+<div class="box">
+<h2>Welcome!</h2>
+<%= render 'about' %>
+</div>
+</div>
+
+<div class="span-16 last">
+<h2>Studies</h2>
+<%= render 'studies/table' %>
+
+<hr>
+
+<h2>Concept Groups</h2>
+<%= render 'concept_groups/table' %>
+</div>

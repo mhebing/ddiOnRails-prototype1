@@ -19,6 +19,8 @@ class PhysicalInstance < ActiveRecord::Base
 
   belongs_to :physical_data_product
 
+  has_one :group, through: :physical_data_product
+
   def title
     if label.blank? then name else label end
   end
