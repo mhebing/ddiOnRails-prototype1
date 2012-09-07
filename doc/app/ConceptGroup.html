@@ -70,6 +70,8 @@
 
   <ul class="link-list">
     
+    <li><a href="#method-c-import">::import</a>
+    
     <li><a href="#method-i-title">#title</a>
     
   </ul>
@@ -246,6 +248,53 @@ parent_id  :integer</pre>
 
     <!-- Methods -->
     
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-import" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">import</span><span
+            class="method-args">(filename="import/concept_groups.csv")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="import-source">
+            <pre><span class="ruby-comment"># File app/models/concept_group.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-string">&quot;import/concept_groups.csv&quot;</span>)
+  <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@row</span> = <span class="ruby-identifier">row</span>.<span class="ruby-identifier">to_hash</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@row</span>[<span class="ruby-string">&quot;parent&quot;</span>].<span class="ruby-identifier">blank?</span> &amp;
+       <span class="ruby-operator">!</span><span class="ruby-constant">ConceptGroup</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-ivar">@row</span>[<span class="ruby-string">&quot;parent&quot;</span>]).<span class="ruby-identifier">blank?</span>
+    <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@row</span>[<span class="ruby-string">&quot;parent_id&quot;</span>] = <span class="ruby-constant">ConceptGroup</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-ivar">@row</span>[<span class="ruby-string">&quot;parent&quot;</span>]).<span class="ruby-identifier">id</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@row</span>[<span class="ruby-string">&quot;parent_id&quot;</span>] = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-constant">ConceptGroup</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@row</span>[<span class="ruby-string">&quot;name&quot;</span>],
+                        <span class="ruby-identifier">parent_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@row</span>[<span class="ruby-string">&quot;parent_id&quot;</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- import-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- import-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
       <h3 class="section-header">Public Instance Methods</h3>
 

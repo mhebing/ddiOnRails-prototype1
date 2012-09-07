@@ -275,8 +275,9 @@
     <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-value">:all</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">can</span> <span class="ruby-value">:read</span>, <span class="ruby-value">:all</span>
-    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">Basket</span>, <span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>
-    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">UserProfile</span>, <span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>
+    <span class="ruby-identifier">cannot</span> <span class="ruby-value">:read</span>, [<span class="ruby-constant">Basket</span>, <span class="ruby-constant">UserProfile</span>]
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:read</span>, [<span class="ruby-constant">Basket</span>, <span class="ruby-constant">UserProfile</span>], <span class="ruby-identifier">make_public</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, [<span class="ruby-constant">Basket</span>, <span class="ruby-constant">UserProfile</span>], <span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>
   <span class="ruby-keyword">end</span>
   
   <span class="ruby-comment"># The first argument to `can` is the action you are giving the user permission to do.</span>
