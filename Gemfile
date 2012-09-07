@@ -16,6 +16,7 @@ gem 'cancan'
 gem 'annotate'
 gem 'rails-erd'
 gem 'nokogiri'
+gem 'kaminari'
 
 
 # Gems used only for assets and not required
