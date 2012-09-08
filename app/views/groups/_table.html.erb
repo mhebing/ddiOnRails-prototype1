@@ -9,7 +9,9 @@
   <tr>
     <td><%= link_to group.name, group %></td>
     <td><%= group.label %></td>
-    <td><%= link_to group.study.name, group.study %></td>
+    <td><%= link_to group.study.name,
+            group.study unless
+            group.study.blank? %></td>
   </tr>
 <% end %>
 </table>

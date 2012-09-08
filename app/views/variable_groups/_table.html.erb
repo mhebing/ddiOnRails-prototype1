@@ -11,9 +11,15 @@
   <tr>
     <td><%= link_to variable_group.name, variable_group %></td>
     <td><%= variable_group.label %></td>
-    <td><%= link_to variable_group.logical_product.name, variable_group.logical_product unless variable_group.logical_product.blank?%></td>
-    <td><%= link_to variable_group.question.name, variable_group.question unless variable_group.question.blank? %></td>
-    <td><%= link_to variable_group.concept.name, variable_group.concept unless variable_group.concept.blank?%></td>
+    <td><%= link_to variable_group.logical_product.name,
+            variable_group.logical_product unless
+            variable_group.logical_product.blank?%></td>
+    <td><%= link_to variable_group.question.name,
+            variable_group.question unless
+            variable_group.question.blank? %></td>
+    <td><%= link_to variable_group.concept.name,
+            variable_group.concept unless
+            variable_group.concept.blank?%></td>
   </tr>
 <% end %>
 </table>
