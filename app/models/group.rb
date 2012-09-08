@@ -38,12 +38,12 @@ class Group < ActiveRecord::Base
       var.xpath(".//sumStat").each do |sumStat|
         @variable.variable_statistics << VariableStatistic.new(
            statistic: sumStat.xpath("@type").to_s,
-           value: sumStat.children.to_s)
+           value: sumStat.text)
       end
       var.xpath(".//catgry").each do |catgry|
         @variable.variable_categories << VariableCategory.new(
-           label: catgry.xpath(".//catValu").children.to_s,
-           frequency: catgry.xpath(".//catStat").children.to_s)
+           label: catgry.xpath(".//catValu").text,
+           frequency: catgry.xpath(".//catStat").text)
       end
       @variable.save
     end

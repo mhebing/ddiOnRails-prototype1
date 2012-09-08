@@ -12,9 +12,12 @@
 #
 
 class Question < ActiveRecord::Base
-  attr_accessible :description, :fix_name, :label, :name
+  attr_accessible :description, :fix_name, :label, :name, :questionnaire_id
 
+  belongs_to :questionnaire
   has_many :variable_groups
+  has_many :question_answers
+  has_many :question_scales
 
   def title
     if label.blank? then name else label end

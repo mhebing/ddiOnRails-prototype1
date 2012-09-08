@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Label</th>
+  </tr>
+
+<% @question_answers.each do |question_answer| %>
+  <tr>
+    <td><%= question_answer.value %></td>
+    <td><%= question_answer.label %></td>
+  </tr>
+<% end %>
+</table>
+

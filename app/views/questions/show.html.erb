@@ -32,3 +32,13 @@
 <%= link_to 'Back', questions_path %>
 <% end %>
 </div>
+
+<div class="span-8">
+<h2>Answers</h2>
+<%= render 'question_answers/table' %>
+</div>
+
+<div class="span-8 last">
+<h2>Scales</h2>
+<%= render 'question_scales/table' %>
+</div>

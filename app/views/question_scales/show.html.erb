@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question:</b>
+  <%= @question_scale.question_id %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @question_scale.value %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @question_scale.label %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_scale_path(@question_scale) %> |
+<%= link_to 'Back', question_scales_path %>

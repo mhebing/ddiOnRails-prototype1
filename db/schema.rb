@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120907074911) do
+ActiveRecord::Schema.define(:version => 20120908101059) do
 
   create_table "baskets", :force => true do |t|
     t.string   "name"
@@ -106,13 +106,41 @@ ActiveRecord::Schema.define(:version => 20120907074911) do
     t.integer "user_profile_id"
   end
 
+  create_table "question_answers", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "value"
+    t.string   "label"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "question_scales", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "value"
+    t.string   "label"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "questionnaires", :force => true do |t|
+    t.string   "name"
+    t.string   "label"
+    t.text     "abstract"
+    t.integer  "data_collection_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "questions", :force => true do |t|
     t.string   "name"
     t.string   "label"
     t.string   "fix_name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "number"
+    t.string   "type"
+    t.integer  "questionnaire_id"
   end
 
   create_table "studies", :force => true do |t|

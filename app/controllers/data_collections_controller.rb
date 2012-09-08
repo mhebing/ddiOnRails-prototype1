@@ -17,6 +17,7 @@ class DataCollectionsController < ApplicationController
   # GET /data_collections/1.json
   def show
     @data_collection = DataCollection.find(params[:id])
+    @questionnaires = @data_collection.questionnaires
 
     respond_to do |format|
       format.html # show.html.erb

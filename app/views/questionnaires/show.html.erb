@@ -1,0 +1,22 @@
+<div class="span-24">
+<h1><%= @questionnaire.title %></h1>
+</div>
+
+<hr>
+
+<div class="span-8">
+<div class="box">
+<h2>Questionnaire</h2>
+<%= render 'info' %>
+</div>
+
+<% if can? :manage, @questionnaire %>
+<%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
+<%= link_to 'Back', questionnaires_path %>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>Questions</h2>
+<%= render 'questions/table' %>
+</div>

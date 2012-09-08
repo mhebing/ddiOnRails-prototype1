@@ -1,4 +1,10 @@
 DdiOnRails::Application.routes.draw do
+  resources :questionnaires
+
+  resources :question_scales
+
+  resources :question_answers
+
   resources :publications
 
   resources :user_profiles
