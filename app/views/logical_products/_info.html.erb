@@ -1,0 +1,23 @@
+
+<p>
+  <b>Name:</b>
+  <%= link_to @logical_product.name, @logical_product %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @logical_product.label %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @logical_product.abstract %>
+</p>
+
+<p>
+  <b>Study unit:</b>
+  <%= link_to @logical_product.study_unit.name, 
+      @logical_product.study_unit unless
+      @logical_product.study_unit.blank? %>
+</p>
+

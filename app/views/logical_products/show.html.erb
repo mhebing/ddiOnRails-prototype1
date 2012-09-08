@@ -6,25 +6,8 @@
 
 <div class="span-8">
 <div class="box">
-<p>
-  <b>Name:</b>
-  <%= link_to @logical_product.name, @logical_product %>
-</p>
-
-<p>
-  <b>Label:</b>
-  <%= @logical_product.label %>
-</p>
-
-<p>
-  <b>Abstract:</b>
-  <%= @logical_product.abstract %>
-</p>
-
-<p>
-  <b>Study unit:</b>
-  <%= link_to @logical_product.study_unit.name, @logical_product.study_unit %>
-</p>
+<h2>Logical Product</h2>
+<%= render 'info' %>
 </div>
 
 <% if can? :manage, @logical_product %>

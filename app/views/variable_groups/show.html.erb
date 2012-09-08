@@ -6,30 +6,8 @@
 
 <div class="span-8">
 <div class="box">
-<p>
-  <b>Name:</b>
-  <%= @variable_group.name %>
-</p>
-
-<p>
-  <b>Label:</b>
-  <%= @variable_group.label %>
-</p>
-
-<p>
-  <b>Logical product:</b>
-  <%= link_to @variable_group.logical_product.name, @variable_group.logical_product unless @variable_group.logical_product.blank?%>
-</p>
-
-<p>
-  <b>Question:</b>
-  <%= link_to @variable_group.question.name, @variable_group.question unless @variable_group.question.blank? %>
-</p>
-
-<p>
-  <b>Concept:</b>
-  <%= link_to @variable_group.concept.name, @variable_group.concept unless @variable_group.concept.blank? %>
-</p>
+<h2>Variable Group</h2>
+<%= render 'info' %>
 </div>
 
 <% if can? :manage, @variable_group %>

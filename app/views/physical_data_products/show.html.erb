@@ -6,25 +6,8 @@
 
 <div class="span-8">
 <div class="box">
-<p>
-  <b>Name:</b>
-  <%= @physical_data_product.name %>
-</p>
-
-<p>
-  <b>Label:</b>
-  <%= @physical_data_product.label %>
-</p>
-
-<p>
-  <b>Group:</b>
-  <%= @physical_data_product.group_id %>
-</p>
-
-<p>
-  <b>Logical product:</b>
-  <%= @physical_data_product.logical_product_id %>
-</p>
+<h2>Physical Data Product</h2>
+<%= render 'info' %>
 </div>
 
 <% if can? :manage, @physical_data_product %>

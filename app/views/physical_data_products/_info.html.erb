@@ -1,0 +1,23 @@
+
+<p>
+  <b>Name:</b>
+  <%= @physical_data_product.name %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @physical_data_product.label %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @physical_data_product.group_id %>
+</p>
+
+<p>
+  <b>Logical product:</b>
+  <%= link_to @physical_data_product.logical_product.name,
+      @physical_data_product.logical_product unless
+      @physical_data_product.logical_product.blank? %>
+</p>
+

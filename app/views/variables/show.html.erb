@@ -7,25 +7,8 @@
 <div class="span-24">
 <div class="span-8">
 <div class="box">
-<p>
-  <b>Name:</b>
-  <%= link_to @variable.name, @variable %>
-</p>
-
-<p>
-  <b>Label:</b>
-  <%= @variable.label %>
-</p>
-
-<p>
-  <b>Physical data product:</b>
-  <%= link_to @variable.physical_data_product.name, @variable.physical_data_product unless @variable.physical_data_product.blank? %>
-</p>
-
-<p>
-  <b>Variable group:</b>
-  <%= link_to @variable.variable_group.name, @variable.variable_group unless @variable.variable_group.blank? %>
-</p>
+<h2>Variable</h2>
+<%= render 'info' %>
 </div>
 
 <% if can? :manage, @variable %>

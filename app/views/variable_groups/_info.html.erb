@@ -1,0 +1,33 @@
+
+<p>
+  <b>Name:</b>
+  <%= link_to @variable_group.name,
+      @variable_group %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @variable_group.label %>
+</p>
+
+<p>
+  <b>Logical product:</b>
+  <%= link_to @variable_group.logical_product.name,
+      @variable_group.logical_product unless
+      @variable_group.logical_product.blank?%>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= link_to @variable_group.question.name,
+      @variable_group.question unless
+      @variable_group.question.blank? %>
+</p>
+
+<p>
+  <b>Concept:</b>
+  <%= link_to @variable_group.concept.name,
+      @variable_group.concept unless
+      @variable_group.concept.blank? %>
+</p>
+
