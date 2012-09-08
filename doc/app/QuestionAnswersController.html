@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
-<title>class GroupsController - Rails Application Documentation</title>
+<title>class QuestionAnswersController - Rails Application Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>app/controllers/groups_controller.rb
+    <li>app/controllers/question_answers_controller.rb
   </ul>
 </nav>
 
@@ -244,7 +244,7 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class GroupsController</h1>
+  <h1 class="class">class QuestionAnswersController</h1>
 
   <div id="description" class="description">
     
@@ -279,22 +279,22 @@
 
         <div class="method-description">
           
-          <p>POST /groups POST /groups.json</p>
+          <p>POST /question_answers POST /question_answers.json</p>
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/groups_controller.rb, line 46</span>
+            <pre><span class="ruby-comment"># File app/controllers/question_answers_controller.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
-  <span class="ruby-ivar">@group</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:group</span>])
+  <span class="ruby-ivar">@question_answer</span> = <span class="ruby-constant">QuestionAnswer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:question_answer</span>])
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@group</span>.<span class="ruby-identifier">save</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@group</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Group was successfully created.'</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@group</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:created</span>, <span class="ruby-identifier">location</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@group</span> }
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@question_answer</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@question_answer</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Question answer was successfully created.'</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@question_answer</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:created</span>, <span class="ruby-identifier">location</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@question_answer</span> }
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;new&quot;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@group</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:unprocessable_entity</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@question_answer</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -319,18 +319,18 @@
 
         <div class="method-description">
           
-          <p>DELETE /groups/1 DELETE /groups/1.json</p>
+          <p>DELETE /question_answers/1 DELETE /question_answers/1.json</p>
           
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/groups_controller.rb, line 78</span>
+            <pre><span class="ruby-comment"># File app/controllers/question_answers_controller.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
-  <span class="ruby-ivar">@group</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
-  <span class="ruby-ivar">@group</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-ivar">@question_answer</span> = <span class="ruby-constant">QuestionAnswer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@question_answer</span>.<span class="ruby-identifier">destroy</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">groups_url</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">question_answers_url</span> }
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -355,14 +355,14 @@
 
         <div class="method-description">
           
-          <p>GET /groups/1/edit</p>
+          <p>GET /question_answers/1/edit</p>
           
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/groups_controller.rb, line 40</span>
+            <pre><span class="ruby-comment"># File app/controllers/question_answers_controller.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
-  <span class="ruby-ivar">@group</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@question_answer</span> = <span class="ruby-constant">QuestionAnswer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
           </div><!-- edit-source -->
           
@@ -385,18 +385,18 @@
 
         <div class="method-description">
           
-          <p>GET /groups GET /groups.json</p>
+          <p>GET /question_answers GET /question_answers.json</p>
           
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/groups_controller.rb, line 7</span>
+            <pre><span class="ruby-comment"># File app/controllers/question_answers_controller.rb, line 4</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
-  <span class="ruby-ivar">@groups</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@question_answers</span> = <span class="ruby-constant">QuestionAnswer</span>.<span class="ruby-identifier">all</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># index.html.erb</span>
-    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@groups</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@question_answers</span> }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- index-source -->
@@ -420,18 +420,18 @@
 
         <div class="method-description">
           
-          <p>GET /groups/new GET /groups/new.json</p>
+          <p>GET /question_answers/new GET /question_answers/new.json</p>
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/groups_controller.rb, line 30</span>
+            <pre><span class="ruby-comment"># File app/controllers/question_answers_controller.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
-  <span class="ruby-ivar">@group</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@question_answer</span> = <span class="ruby-constant">QuestionAnswer</span>.<span class="ruby-identifier">new</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># new.html.erb</span>
-    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@group</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@question_answer</span> }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- new-source -->
@@ -455,19 +455,18 @@
 
         <div class="method-description">
           
-          <p>GET /groups/1 GET /groups/1.json</p>
+          <p>GET /question_answers/1 GET /question_answers/1.json</p>
           
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/groups_controller.rb, line 18</span>
+            <pre><span class="ruby-comment"># File app/controllers/question_answers_controller.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
-  <span class="ruby-ivar">@group</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
-  <span class="ruby-ivar">@physical_data_products</span> = <span class="ruby-ivar">@group</span>.<span class="ruby-identifier">physical_data_products</span>
+  <span class="ruby-ivar">@question_answer</span> = <span class="ruby-constant">QuestionAnswer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># show.html.erb</span>
-    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@group</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@question_answer</span> }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- show-source -->
@@ -491,22 +490,22 @@
 
         <div class="method-description">
           
-          <p>PUT /groups/1 PUT /groups/1.json</p>
+          <p>PUT /question_answers/1 PUT /question_answers/1.json</p>
           
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/groups_controller.rb, line 62</span>
+            <pre><span class="ruby-comment"># File app/controllers/question_answers_controller.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
-  <span class="ruby-ivar">@group</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@question_answer</span> = <span class="ruby-constant">QuestionAnswer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@group</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:group</span>])
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@group</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Group was successfully updated.'</span> }
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@question_answer</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:question_answer</span>])
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@question_answer</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Question answer was successfully updated.'</span> }
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;edit&quot;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@group</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:unprocessable_entity</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@question_answer</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

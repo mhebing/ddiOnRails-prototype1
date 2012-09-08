@@ -167,6 +167,24 @@
   
     <li><a href="./Question.html">Question</a>
   
+    <li><a href="./QuestionAnswer.html">QuestionAnswer</a>
+  
+    <li><a href="./QuestionAnswersController.html">QuestionAnswersController</a>
+  
+    <li><a href="./QuestionAnswersHelper.html">QuestionAnswersHelper</a>
+  
+    <li><a href="./QuestionScale.html">QuestionScale</a>
+  
+    <li><a href="./QuestionScalesController.html">QuestionScalesController</a>
+  
+    <li><a href="./QuestionScalesHelper.html">QuestionScalesHelper</a>
+  
+    <li><a href="./Questionnaire.html">Questionnaire</a>
+  
+    <li><a href="./QuestionnairesController.html">QuestionnairesController</a>
+  
+    <li><a href="./QuestionnairesHelper.html">QuestionnairesHelper</a>
+  
     <li><a href="./QuestionsController.html">QuestionsController</a>
   
     <li><a href="./QuestionsHelper.html">QuestionsHelper</a>
@@ -374,7 +392,7 @@
           <div class="method-source-code" id="index-source">
             <pre><span class="ruby-comment"># File app/controllers/user_profiles_controller.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
-  <span class="ruby-ivar">@user_profiles</span> = <span class="ruby-constant">UserProfile</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@user_profiles</span> = <span class="ruby-constant">UserProfile</span>.<span class="ruby-identifier">find_all_by_make_public</span>(<span class="ruby-keyword">true</span>)
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># index.html.erb</span>

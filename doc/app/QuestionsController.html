@@ -167,6 +167,24 @@
   
     <li><a href="./Question.html">Question</a>
   
+    <li><a href="./QuestionAnswer.html">QuestionAnswer</a>
+  
+    <li><a href="./QuestionAnswersController.html">QuestionAnswersController</a>
+  
+    <li><a href="./QuestionAnswersHelper.html">QuestionAnswersHelper</a>
+  
+    <li><a href="./QuestionScale.html">QuestionScale</a>
+  
+    <li><a href="./QuestionScalesController.html">QuestionScalesController</a>
+  
+    <li><a href="./QuestionScalesHelper.html">QuestionScalesHelper</a>
+  
+    <li><a href="./Questionnaire.html">Questionnaire</a>
+  
+    <li><a href="./QuestionnairesController.html">QuestionnairesController</a>
+  
+    <li><a href="./QuestionnairesHelper.html">QuestionnairesHelper</a>
+  
     <li><a href="./QuestionsController.html">QuestionsController</a>
   
     <li><a href="./QuestionsHelper.html">QuestionsHelper</a>
@@ -266,7 +284,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 45</span>
+            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@question</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:question</span>])
 
@@ -306,7 +324,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 77</span>
+            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@question</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@question</span>.<span class="ruby-identifier">destroy</span>
@@ -342,7 +360,7 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 39</span>
+            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
   <span class="ruby-ivar">@question</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -374,7 +392,7 @@
           <div class="method-source-code" id="index-source">
             <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
-  <span class="ruby-ivar">@questions</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@questions</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>])
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># index.html.erb</span>
@@ -407,7 +425,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 29</span>
+            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@question</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">new</span>
 
@@ -445,6 +463,8 @@
             <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
   <span class="ruby-ivar">@question</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@question_scales</span> = <span class="ruby-ivar">@question</span>.<span class="ruby-identifier">question_scales</span>
+  <span class="ruby-ivar">@question_answers</span> = <span class="ruby-ivar">@question</span>.<span class="ruby-identifier">question_answers</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># show.html.erb</span>
@@ -477,7 +497,7 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 61</span>
+            <pre><span class="ruby-comment"># File app/controllers/questions_controller.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-ivar">@question</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 

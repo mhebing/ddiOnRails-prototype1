@@ -70,6 +70,8 @@
 
   <ul class="link-list">
     
+    <li><a href="#method-i-import">#import</a>
+    
     <li><a href="#method-i-title">#title</a>
     
   </ul>
@@ -154,6 +156,24 @@
     <li><a href="./PublicationsHelper.html">PublicationsHelper</a>
   
     <li><a href="./Question.html">Question</a>
+  
+    <li><a href="./QuestionAnswer.html">QuestionAnswer</a>
+  
+    <li><a href="./QuestionAnswersController.html">QuestionAnswersController</a>
+  
+    <li><a href="./QuestionAnswersHelper.html">QuestionAnswersHelper</a>
+  
+    <li><a href="./QuestionScale.html">QuestionScale</a>
+  
+    <li><a href="./QuestionScalesController.html">QuestionScalesController</a>
+  
+    <li><a href="./QuestionScalesHelper.html">QuestionScalesHelper</a>
+  
+    <li><a href="./Questionnaire.html">Questionnaire</a>
+  
+    <li><a href="./QuestionnairesController.html">QuestionnairesController</a>
+  
+    <li><a href="./QuestionnairesHelper.html">QuestionnairesHelper</a>
   
     <li><a href="./QuestionsController.html">QuestionsController</a>
   
@@ -248,6 +268,60 @@ updated_at :datetime         not null</pre>
     
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
       <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-import" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">import</span><span
+            class="method-args">(filename = "import/group.xml")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="import-source">
+            <pre><span class="ruby-comment"># File app/models/group.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">import</span>(<span class="ruby-identifier">filename</span> = <span class="ruby-string">&quot;import/group.xml&quot;</span>)
+  <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">group</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">close</span>
+
+  <span class="ruby-identifier">group</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;//var&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@files&quot;</span>).<span class="ruby-identifier">blank?</span>
+      <span class="ruby-keyword">then</span> <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find_or_create_by_name_and_group_id</span>(<span class="ruby-string">&quot;default&quot;</span>, <span class="ruby-identifier">id</span>)
+      <span class="ruby-keyword">else</span> <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find_or_create_by_name_and_group_id</span>(<span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@files&quot;</span>), <span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@variable</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@name&quot;</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@name&quot;</span>).<span class="ruby-identifier">blank?</span>
+    <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">label</span> = <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//labl&quot;</span>).<span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//labl&quot;</span>).<span class="ruby-identifier">blank?</span>
+    <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">physical_data_product</span> = <span class="ruby-ivar">@physical_data_product</span>
+    <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//sumStat&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sumStat</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">variable_statistics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">VariableStatistic</span>.<span class="ruby-identifier">new</span>(
+         <span class="ruby-identifier">statistic</span><span class="ruby-operator">:</span> <span class="ruby-identifier">sumStat</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@type&quot;</span>).<span class="ruby-identifier">to_s</span>,
+         <span class="ruby-identifier">value</span><span class="ruby-operator">:</span> <span class="ruby-identifier">sumStat</span>.<span class="ruby-identifier">text</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//catgry&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">catgry</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">variable_categories</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">VariableCategory</span>.<span class="ruby-identifier">new</span>(
+         <span class="ruby-identifier">label</span><span class="ruby-operator">:</span> <span class="ruby-identifier">catgry</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//catValu&quot;</span>).<span class="ruby-identifier">text</span>,
+         <span class="ruby-identifier">frequency</span><span class="ruby-operator">:</span> <span class="ruby-identifier">catgry</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//catStat&quot;</span>).<span class="ruby-identifier">text</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- import-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- import-method -->
 
     
       <div id="method-i-title" class="method-detail ">
