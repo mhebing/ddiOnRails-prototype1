@@ -2,7 +2,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires
   # GET /questionnaires.json
   def index
-    @questionnaires = Questionnaire.all
+    @questionnaires = Questionnaire.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/1.json
   def show
     @questionnaire = Questionnaire.find(params[:id])
-    @questions = @questionnaire.questions
+    @questions = @questionnaire.questions.page(params[:page])
 
     respond_to do |format|
       format.html # show.html.erb
