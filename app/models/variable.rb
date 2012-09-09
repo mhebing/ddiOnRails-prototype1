@@ -27,4 +27,19 @@ class Variable < ActiveRecord::Base
   def title
     if label.blank? then name else label end
   end
+
+  def to_compare
+    @compare = {"name" => name, "label" => label}
+    variable_categories.each do |category|
+      if category.value.blank?
+      then
+      @compare["strings"] ||= []
+      @compare["strings"] << category.label
+      else
+      @compare["value_labels"] ||= {}
+      @compare["value_labels"][category.value.to_s] = category.label
+      end
+    end
+    return @compare
+  end
 end

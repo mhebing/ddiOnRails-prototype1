@@ -1,0 +1,39 @@
+
+<p>
+  <b>Name:</b>
+  <%= @question.name %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @question.number %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @question.type %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @question.label %>
+</p>
+
+<p>
+  <b>Fix name:</b>
+  <%= @question.fix_name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @question.description %>
+</p>
+
+<p>
+  <b>Questionnaire:</b>
+  <%= link_to @question.questionnaire.name,
+              @question.questionnaire unless
+              @question.questionnaire.blank? %>
+</p>
+
+

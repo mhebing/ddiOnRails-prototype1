@@ -17,6 +17,7 @@
 <% end %>
 </div>
 
+<div class="span-16 last">
 <% unless @variable_statistics.blank? %>
 <div class="span-8">
 <h2>Statistics</h2>
@@ -30,6 +31,14 @@
 <%= render 'variable_categories/table' %>
 </div>
 <% end %>
+
+<hr>
+
+<div class="span-16 last">
+<h2>Variable Comparison</h2>
+<%= render 'comparison' %>
+</div>
+</div>
 
 </div>
 

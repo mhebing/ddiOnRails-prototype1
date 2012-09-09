@@ -6,25 +6,8 @@
 
 <div class="span-8">
 <div class="box">
-<p>
-  <b>Name:</b>
-  <%= @question.name %>
-</p>
-
-<p>
-  <b>Label:</b>
-  <%= @question.label %>
-</p>
-
-<p>
-  <b>Fix name:</b>
-  <%= @question.fix_name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @question.description %>
-</p>
+<h2>Question</h2>
+<%= render 'info' %>
 </div>
 
 <% if can? :manage, @question %>

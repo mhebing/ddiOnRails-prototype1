@@ -19,6 +19,12 @@ class VariablesController < ApplicationController
     @variable = Variable.find(params[:id])
     @variable_statistics = @variable.variable_statistics
     @variable_categories = @variable.variable_categories
+    if @variable.variable_group.blank?
+      @variables = []
+    else
+      @variables = @variable.variable_group.variables
+      @variables = @variables.sort_by { |var| var.group.name}
+    end
 
     respond_to do |format|
       format.html # show.html.erb
