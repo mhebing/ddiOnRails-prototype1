@@ -9,6 +9,7 @@ DdiOnRails::Application.routes.draw do
 
   resources :user_profiles
 
+  match "/baskets/set" => "baskets#set"
   resources :baskets
 
   resources :physical_instances

@@ -48,7 +48,8 @@ class BasketsController < ApplicationController
 
     respond_to do |format|
       if @basket.save
-        format.html { redirect_to user_profile_path(current_user.id), notice: 'Basket was successfully created.' }
+        session[:basket_id] = @basket.id
+        format.html { redirect_to basket_path(@basket.id), notice: 'Basket was successfully created.' }
         format.json { render json: @basket, status: :created, location: @basket }
       else
         format.html { render action: "new" }
@@ -82,6 +83,15 @@ class BasketsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to baskets_url }
       format.json { head :no_content }
+    end
+  end
+
+  def set
+    session[:basket_id] = params["basket_id"]
+    if params["basket_id"] == ""
+      redirect_to new_basket_path
+    else
+      redirect_to basket_path(params["basket_id"])
     end
   end
 end

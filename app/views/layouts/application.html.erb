@@ -15,16 +15,22 @@
 
 <div class="span-24">
 <div class="span-16">
+<p></p>
 <% if user_signed_in? %>
   <p>
-  <%= current_user.email %> |
+  <b><%= current_user.email %></b> |
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> |
-  <%= if UserProfile.find_all_by_id(current_user.id).blank?
-        link_to('Create my user profile', new_user_profile_path)
-      else
+  <%= if UserProfile.exists?(current_user.id)
         link_to('My user profile', user_profile_path(current_user.id))
+      else
+        link_to('Create my user profile', new_user_profile_path)
       end %>
   </p>
+  <%= form_tag("/baskets/set", method: "GET") do %>
+    <%= label_tag(:basket_id, "Basket") %>
+    <%= select_tag(:basket_id, options_for_select(current_user.baskets.map {|b| [b.name, b.id]} << ["--- New Basket ---", ""], session["basket_id"])) %>
+    <%= submit_tag "Select" %>
+  <% end %>
 <% else %>
   <p>
   <%= link_to('Login', new_user_session_path)  %>
