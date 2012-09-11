@@ -1,0 +1,36 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Logical product</th>
+    <th>Question</th>
+    <th>Concept</th>
+    <th>Available</th>
+  </tr>
+
+<% @current_group = Group.find(session[:group_id]) %>
+
+<% @variable_groups.each do |variable_group| %>
+  <tr>
+    <td><b><%= link_to variable_group.name, variable_group %></b></td>
+    <td><%= variable_group.label %></td>
+    <td><%= link_to variable_group.logical_product.name,
+            variable_group.logical_product unless
+            variable_group.logical_product.blank?%></td>
+    <td><%= link_to variable_group.question.name,
+            variable_group.question unless
+            variable_group.question.blank? %></td>
+    <td><%= link_to variable_group.concept.name,
+            variable_group.concept unless
+            variable_group.concept.blank?%></td>
+    <% if @current_group.variable_groups.include? variable_group %>
+      <td>In Group</td>
+    <% elsif @current_group.study.variable_groups.include? variable_group %>
+      <td><span class="highlight">Study only</span></td>
+    <% else %>
+      <td><span class="removed">NA</span></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
