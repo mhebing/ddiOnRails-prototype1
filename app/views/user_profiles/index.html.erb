@@ -11,9 +11,6 @@ Public User Profiles</h1>
 <%= render 'about' %>
 </div>
 
-<% if can? :manage, UserProfile %>
-<%= link_to 'New User profile', new_user_profile_path %>
-<% end %>
 </div>
 
 <div class="span-16 last">

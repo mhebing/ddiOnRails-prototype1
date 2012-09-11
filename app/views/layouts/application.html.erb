@@ -19,7 +19,11 @@
   <p>
   <%= current_user.email %> |
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> |
-  <%= link_to('My user profile', user_profile_path(current_user.id)) %>
+  <%= if UserProfile.find_all_by_id(current_user.id).blank?
+        link_to('Create my user profile', new_user_profile_path)
+      else
+        link_to('My user profile', user_profile_path(current_user.id))
+      end %>
   </p>
 <% else %>
   <p>
@@ -71,7 +75,8 @@ Footer
 </div>
 
 <!-- <hr> -->
-<%#= debug(assigns) %>
+<%= debug(assigns) %>
+<%= debug(session) %>
 
 </div>
 
