@@ -10,6 +10,8 @@ DdiOnRails::Application.routes.draw do
   resources :user_profiles
 
   match "/baskets/set" => "baskets#set"
+  match "/baskets/add_variable" => "baskets#add_variable"
+  match "/baskets/remove_variable" => "baskets#remove_variable"
   resources :baskets
 
   resources :physical_instances
@@ -24,6 +26,7 @@ DdiOnRails::Application.routes.draw do
 
   resources :variables
 
+  match "/groups/set" => "groups#set"
   resources :variable_groups
 
   resources :questions

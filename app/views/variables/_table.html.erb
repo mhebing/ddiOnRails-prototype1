@@ -4,6 +4,7 @@
     <th>Label</th>
     <th>Physical data product</th>
     <th>Variable group</th>
+    <th></th>
   </tr>
 
 <% @variables.each do |variable| %>
@@ -16,6 +17,13 @@
     <td><%= link_to variable.variable_group.name,
             variable.variable_group unless
             variable.variable_group.blank? %></td>
+    <td><% unless session[:basket_id].blank? %>
+        <%= if Basket.find(session[:basket_id]).variable_groups.include? variable.variable_group
+              link_to "remove", "/baskets/remove_variable?variable_id=#{variable.id}"
+            else
+              link_to "Add", "/baskets/add_variable?variable_id=#{variable.id}"
+            end %>
+       <% end %>
   </tr>
 <% end %>
 </table>

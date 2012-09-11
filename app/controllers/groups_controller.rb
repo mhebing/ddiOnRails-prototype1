@@ -84,4 +84,14 @@ class GroupsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def set
+    session[:group_id] = params["group_id"]
+    if params["group_id"] == ""
+      redirect_to new_group_path
+    else
+      redirect_to group_path(params["group_id"])
+    end
+  end
+
 end

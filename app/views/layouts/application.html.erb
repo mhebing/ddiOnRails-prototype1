@@ -28,8 +28,21 @@
   </p>
   <%= form_tag("/baskets/set", method: "GET") do %>
     <%= label_tag(:basket_id, "Basket") %>
-    <%= select_tag(:basket_id, options_for_select(current_user.baskets.map {|b| [b.name, b.id]} << ["--- New Basket ---", ""], session["basket_id"])) %>
-    <%= submit_tag "Select" %>
+    <%= select_tag :basket_id,
+                   options_for_select(current_user.baskets.map {|b|
+                     [b.name, b.id]} << ["--- New Basket ---", ""],
+                   session["basket_id"]),
+                   include_blank: session[:basket_id].blank? %>
+    <%= submit_tag "Select & goto" %>
+  <% end %>
+  <%= form_tag("/groups/set", method: "GET") do %>
+    <%= label_tag(:group_id, "Group") %>
+    <%= select_tag :group_id,
+                   options_for_select(Group.all.map {|b|
+                     [b.name, b.id]},
+                   session["group_id"]),
+                   include_blank: session[:group_id].blank? %>
+    <%= submit_tag "Select & goto" %>
   <% end %>
 <% else %>
   <p>
