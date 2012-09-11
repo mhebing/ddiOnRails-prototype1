@@ -6,7 +6,7 @@
 
 <% @studies.each do |study| %>
   <tr>
-    <td><%= link_to study.name, study %></td>
+    <td><b><%= link_to study.name, study %></b></td>
     <td><%= study.label %></td>
   </tr>
 <% end %>

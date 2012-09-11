@@ -7,7 +7,7 @@
 
 <% @baskets.each do |basket| %>
   <tr>
-    <td><%= link_to basket.name, basket %></td>
+    <td><b><%= link_to basket.name, basket %></b></td>
     <td><%= basket.description %></td>
     <td><%= basket.user_id %></td>
   </tr>

@@ -7,7 +7,7 @@
 
 <% @questionnaires.each do |questionnaire| %>
   <tr>
-    <td><%= link_to questionnaire.name, questionnaire %></td>
+    <td><b><%= link_to questionnaire.name, questionnaire %></b></td>
     <td><%= questionnaire.label %></td>
     <td><%= questionnaire.data_collection_id %></td>
   </tr>

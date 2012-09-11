@@ -7,7 +7,7 @@
 
 <% @study_units.each do |study_unit| %>
   <tr>
-    <td><%= link_to study_unit.name, study_unit %></td>
+    <td><b><%= link_to study_unit.name, study_unit %></b></td>
     <td><%= study_unit.label %></td>
     <td><%= link_to study_unit.study.name,
             study_unit.study unless

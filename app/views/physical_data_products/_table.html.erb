@@ -8,7 +8,7 @@
 
 <% @physical_data_products.each do |physical_data_product| %>
   <tr>
-    <td><%= link_to physical_data_product.name, physical_data_product %></td>
+    <td><b><%= link_to physical_data_product.name, physical_data_product %></b></td>
     <td><%= physical_data_product.label %></td>
     <td><%= link_to physical_data_product.group.name,
             physical_data_product.group unless

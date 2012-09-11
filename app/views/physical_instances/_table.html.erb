@@ -7,7 +7,7 @@
 
 <% @physical_instances.each do |physical_instance| %>
   <tr>
-    <td><%= link_to physical_instance.name, physical_instance %></td>
+    <td><b><%= link_to physical_instance.name, physical_instance %></b></td>
     <td><%= physical_instance.label %></td>
     <td><%= link_to physical_instance.physical_data_product.name,
             physical_instance.physical_data_product unless

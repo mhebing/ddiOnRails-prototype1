@@ -9,7 +9,7 @@
 
 <% @variable_groups.each do |variable_group| %>
   <tr>
-    <td><%= link_to variable_group.name, variable_group %></td>
+    <td><b><%= link_to variable_group.name, variable_group %></b></td>
     <td><%= variable_group.label %></td>
     <td><%= link_to variable_group.logical_product.name,
             variable_group.logical_product unless

@@ -7,7 +7,7 @@
 
 <% @questions.each do |question| %>
   <tr>
-    <td><%= link_to question.name, question %></td>
+    <td><b><%= link_to question.name, question %></b></td>
     <td><%= question.label %></td>
     <td><%= question.fix_name %></td>
   </tr>

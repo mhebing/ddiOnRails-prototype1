@@ -7,7 +7,7 @@
 
 <% @logical_products.each do |logical_product| %>
   <tr>
-    <td><%= link_to logical_product.name, logical_product %></td>
+    <td><b><%= link_to logical_product.name, logical_product %></b></td>
     <td><%= logical_product.label %></td>
     <td><%= link_to logical_product.study_unit.name,
             logical_product.study_unit unless

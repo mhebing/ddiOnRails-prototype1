@@ -7,7 +7,7 @@
 
 <% @publications.each do |publication| %>
   <tr>
-    <td><%= publication.author %></td>
+    <td><b><%= publication.author %></b></td>
     <td><%= link_to publication.name, publication %></td>
     <td><%= publication.year %></td>
   </tr>

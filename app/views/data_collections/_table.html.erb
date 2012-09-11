@@ -7,7 +7,7 @@
 
 <% @data_collections.each do |data_collection| %>
   <tr>
-    <td><%= link_to data_collection.name, data_collection %></td>
+    <td><b><%= link_to data_collection.name, data_collection %></b></td>
     <td><%= data_collection.label %></td>
     <td><%= link_to data_collection.study_unit.name,
             data_collection.study_unit unless

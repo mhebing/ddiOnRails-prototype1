@@ -7,7 +7,7 @@
 
 <% @groups.each do |group| %>
   <tr>
-    <td><%= link_to group.name, group %></td>
+    <td><b><%= link_to group.name, group %></b></td>
     <td><%= group.label %></td>
     <td><%= link_to group.study.name,
             group.study unless

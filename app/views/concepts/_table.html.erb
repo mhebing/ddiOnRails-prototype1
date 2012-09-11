@@ -7,7 +7,7 @@
 
 <% @concepts.each do |concept| %>
   <tr>
-    <td><%= link_to concept.name, concept %></td>
+    <td><b><%= link_to concept.name, concept %></b></td>
     <td><%= concept.label %></td>
     <td><%= link_to concept.concept_group.name,
             concept.concept_group unless

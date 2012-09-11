@@ -8,7 +8,7 @@
 
 <% @variables.each do |variable| %>
   <tr>
-    <td><%= link_to variable.name, variable %></td>
+    <td><b><%= link_to variable.name, variable %></b></td>
     <td><%= variable.label %></td>
     <td><%= link_to variable.physical_data_product.name,
             variable.physical_data_product unless
