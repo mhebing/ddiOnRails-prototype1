@@ -17,7 +17,9 @@
 <div class="span-16">
 <% if user_signed_in? %>
   <p>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  <%= current_user.email %> |
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> |
+  <%= link_to('My user profile', user_profile_path(current_user.id)) %>
   </p>
 <% else %>
   <p>

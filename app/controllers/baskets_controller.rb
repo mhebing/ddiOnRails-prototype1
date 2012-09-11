@@ -28,7 +28,7 @@ class BasketsController < ApplicationController
   # GET /baskets/new
   # GET /baskets/new.json
   def new
-    @basket = Basket.new
+    @basket = Basket.new(user_id: current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,7 +48,7 @@ class BasketsController < ApplicationController
 
     respond_to do |format|
       if @basket.save
-        format.html { redirect_to @basket, notice: 'Basket was successfully created.' }
+        format.html { redirect_to user_profile_path(current_user.id), notice: 'Basket was successfully created.' }
         format.json { render json: @basket, status: :created, location: @basket }
       else
         format.html { render action: "new" }
