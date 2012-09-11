@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id %><br />
   </div>
   <div class="field">
     <%= f.label :name %><br />
@@ -22,6 +21,10 @@
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :make_public %><br />
+    <%= f.check_box :make_public %>
   </div>
   <div class="actions">
     <%= f.submit %>
