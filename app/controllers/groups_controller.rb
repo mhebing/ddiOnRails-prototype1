@@ -87,11 +87,7 @@ class GroupsController < ApplicationController
 
   def set
     session[:group_id] = params["group_id"]
-    if params["group_id"] == ""
-      redirect_to new_group_path
-    else
-      redirect_to group_path(params["group_id"])
-    end
+    redirect_to request.referer
   end
 
 end

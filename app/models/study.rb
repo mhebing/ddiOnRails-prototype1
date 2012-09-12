@@ -17,6 +17,8 @@ class Study < ActiveRecord::Base
   has_many :groups
   has_many :study_units
 
+  has_many :variable_groups, through: :groups
+
   def title
     if label.blank? then name else label end
   end

@@ -17,6 +17,9 @@ class Group < ActiveRecord::Base
   belongs_to :study
   has_many :physical_data_products
 
+  has_many :variables, through: :physical_data_products
+  has_many :variable_groups, through: :variables
+
   def title
     if label.blank? then name else label end
   end

@@ -24,7 +24,7 @@
             variable_group.concept unless
             variable_group.concept.blank?%></td>
     <% if @current_group.variable_groups.include? variable_group %>
-      <td>In Group</td>
+      <td><span class="added">In Group</span></td>
     <% elsif @current_group.study.variable_groups.include? variable_group %>
       <td><span class="highlight">Study only</span></td>
     <% else %>
