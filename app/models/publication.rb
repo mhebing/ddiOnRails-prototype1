@@ -19,9 +19,12 @@ class Publication < ActiveRecord::Base
     name
   end
   def self.import
-    CSV.foreach(filename = "import/publications.csv", headers: true) do |row|
-      @row = row.to_hash
-      Publication.create(@row)
+    require 'csv'
+    Publication.transaction do
+      CSV.foreach(filename = "import/publications.csv", headers: true) do |row|
+        @row = row.to_hash
+        Publication.create(@row)
+      end
     end
   end
 end
