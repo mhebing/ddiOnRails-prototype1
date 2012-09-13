@@ -2,6 +2,7 @@
   <tr>
     <th>Name</th>
     <th>Label</th>
+    <th>Group</th>
     <th>Physical data product</th>
     <th>Variable group</th>
     <th>Change?</th>
@@ -11,13 +12,22 @@
   <tr>
     <td><b><%= link_to variable.name, variable %></b></td>
     <td><%= variable.label %></td>
+    <td><%= link_to variable.group.name,
+                    variable.group unless
+                    variable.group.blank? %></td>
     <td><%= link_to variable.physical_data_product.name,
             variable.physical_data_product unless
             variable.physical_data_product.blank? %></td>
     <td><%= link_to variable.variable_group.name,
             variable.variable_group unless
             variable.variable_group.blank? %></td>
-    <td><%= "TRUE" unless @last_compare.blank? || variable.to_compare == @last_compare %></td>
+    <% if @last_compare.blank? %>
+      <td></td>
+    <% elsif variable.to_compare == @last_compare %>
+      <td><span class="added">no</span></td>
+    <% else %>
+      <td><span class="highlight">yes</span></td>
+    <% end %>
     <% @last_compare = variable.to_compare %>
   </tr>
 <% end %>
