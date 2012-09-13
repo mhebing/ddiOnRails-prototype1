@@ -80,6 +80,8 @@
     
     <li><a href="#method-i-new">#new</a>
     
+    <li><a href="#method-i-set">#set</a>
+    
     <li><a href="#method-i-show">#show</a>
     
     <li><a href="#method-i-update">#update</a>
@@ -442,6 +444,37 @@
 
         
       </div><!-- new-method -->
+
+    
+      <div id="method-i-set" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set-source">
+            <pre><span class="ruby-comment"># File app/controllers/groups_controller.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span>
+  <span class="ruby-identifier">session</span>[<span class="ruby-value">:group_id</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;group_id&quot;</span>]
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set-method -->
 
     
       <div id="method-i-show" class="method-detail ">

@@ -1,4 +1,4 @@
-Sun, 09 Sep 2012 13:47:11 +0200
+Thu, 13 Sep 2012 09:47:22 +0200
 doc/README_FOR_APP	Mon, 03 Sep 2012 10:01:59 +0200
 app/helpers/variable_groups_helper.rb	Mon, 03 Sep 2012 10:10:33 +0200
 app/helpers/variables_helper.rb	Mon, 03 Sep 2012 10:10:39 +0200
@@ -24,12 +24,12 @@ app/helpers/concept_groups_helper.rb	Mon, 03 Sep 2012 10:10:16 +0200
 app/helpers/data_collections_helper.rb	Mon, 03 Sep 2012 10:09:59 +0200
 app/models/user.rb	Fri, 07 Sep 2012 08:56:39 +0200
 app/models/physical_data_product.rb	Fri, 07 Sep 2012 08:56:39 +0200
-app/models/group.rb	Sat, 08 Sep 2012 11:00:45 +0200
+app/models/group.rb	Tue, 11 Sep 2012 22:04:07 +0200
 app/models/question_answer.rb	Sat, 08 Sep 2012 13:23:54 +0200
 app/models/questionnaire.rb	Sat, 08 Sep 2012 13:23:54 +0200
-app/models/study_unit.rb	Fri, 07 Sep 2012 15:02:05 +0200
+app/models/study_unit.rb	Tue, 11 Sep 2012 11:13:45 +0200
 app/models/publication.rb	Fri, 07 Sep 2012 16:29:34 +0200
-app/models/study.rb	Fri, 07 Sep 2012 08:56:39 +0200
+app/models/study.rb	Tue, 11 Sep 2012 22:04:45 +0200
 app/models/question_scale.rb	Sat, 08 Sep 2012 13:23:55 +0200
 app/models/logical_product.rb	Fri, 07 Sep 2012 08:56:39 +0200
 app/models/physical_instance.rb	Fri, 07 Sep 2012 11:04:07 +0200
@@ -43,9 +43,9 @@ app/models/data_collection.rb	Sat, 08 Sep 2012 12:12:21 +0200
 app/models/concept.rb	Fri, 07 Sep 2012 08:56:40 +0200
 app/models/basket.rb	Fri, 07 Sep 2012 15:28:07 +0200
 app/models/question.rb	Sat, 08 Sep 2012 13:23:55 +0200
-app/models/user_profile.rb	Fri, 07 Sep 2012 15:28:07 +0200
+app/models/user_profile.rb	Tue, 11 Sep 2012 11:29:15 +0200
 app/controllers/study_units_controller.rb	Mon, 03 Sep 2012 20:38:49 +0200
-app/controllers/user_profiles_controller.rb	Fri, 07 Sep 2012 16:55:49 +0200
+app/controllers/user_profiles_controller.rb	Tue, 11 Sep 2012 11:24:34 +0200
 app/controllers/variable_statistics_controller.rb	Tue, 04 Sep 2012 10:55:27 +0200
 app/controllers/question_answers_controller.rb	Sat, 08 Sep 2012 11:57:51 +0200
 app/controllers/questions_controller.rb	Sat, 08 Sep 2012 13:11:08 +0200
@@ -54,7 +54,7 @@ app/controllers/variables_controller.rb	Sun, 09 Sep 2012 11:05:13 +0200
 app/controllers/questionnaires_controller.rb	Sat, 08 Sep 2012 13:13:02 +0200
 app/controllers/physical_instances_controller.rb	Tue, 04 Sep 2012 14:43:36 +0200
 app/controllers/concepts_controller.rb	Tue, 04 Sep 2012 08:18:38 +0200
-app/controllers/groups_controller.rb	Mon, 03 Sep 2012 20:40:44 +0200
+app/controllers/groups_controller.rb	Wed, 12 Sep 2012 08:50:36 +0200
 app/controllers/studies_controller.rb	Mon, 03 Sep 2012 19:34:06 +0200
 app/controllers/publications_controller.rb	Fri, 07 Sep 2012 16:56:16 +0200
 app/controllers/application_controller.rb	Mon, 03 Sep 2012 16:28:29 +0200
@@ -64,5 +64,5 @@ app/controllers/static_pages_controller.rb	Fri, 07 Sep 2012 10:37:24 +0200
 app/controllers/variable_categories_controller.rb	Tue, 04 Sep 2012 10:55:20 +0200
 app/controllers/logical_products_controller.rb	Mon, 03 Sep 2012 20:40:52 +0200
 app/controllers/concept_groups_controller.rb	Thu, 06 Sep 2012 11:10:27 +0200
-app/controllers/baskets_controller.rb	Tue, 04 Sep 2012 14:51:50 +0200
+app/controllers/baskets_controller.rb	Wed, 12 Sep 2012 08:57:39 +0200
 app/controllers/physical_data_products_controller.rb	Tue, 04 Sep 2012 14:18:51 +0200

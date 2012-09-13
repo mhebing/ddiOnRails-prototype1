@@ -286,7 +286,7 @@ updated_at :datetime         not null</pre>
 
           
           <div class="method-source-code" id="import-source">
-            <pre><span class="ruby-comment"># File app/models/group.rb, line 24</span>
+            <pre><span class="ruby-comment"># File app/models/group.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">import</span>(<span class="ruby-identifier">filename</span> = <span class="ruby-string">&quot;import/group.xml&quot;</span>)
   <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-identifier">group</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">file</span>)
@@ -340,7 +340,7 @@ updated_at :datetime         not null</pre>
 
           
           <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/group.rb, line 20</span>
+            <pre><span class="ruby-comment"># File app/models/group.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

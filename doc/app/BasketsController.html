@@ -70,6 +70,8 @@
 
   <ul class="link-list">
     
+    <li><a href="#method-i-add_variable">#add_variable</a>
+    
     <li><a href="#method-i-create">#create</a>
     
     <li><a href="#method-i-destroy">#destroy</a>
@@ -79,6 +81,10 @@
     <li><a href="#method-i-index">#index</a>
     
     <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-remove_variable">#remove_variable</a>
+    
+    <li><a href="#method-i-set">#set</a>
     
     <li><a href="#method-i-show">#show</a>
     
@@ -268,6 +274,41 @@
       <h3 class="section-header">Public Instance Methods</h3>
 
     
+      <div id="method-i-add_variable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_variable</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_variable-source">
+            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_variable</span>
+  <span class="ruby-ivar">@basket</span> = <span class="ruby-constant">Basket</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:basket_id</span>])
+  <span class="ruby-ivar">@variable_group</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;variable_id&quot;</span>]).<span class="ruby-identifier">variable_group</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">|</span> <span class="ruby-ivar">@variable_group</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">variable_groups</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@variable_group</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_variable-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_variable-method -->
+
+    
       <div id="method-i-create" class="method-detail ">
         
         <div class="method-heading">
@@ -290,7 +331,8 @@
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">save</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@basket</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Basket was successfully created.'</span> }
+      <span class="ruby-identifier">session</span>[<span class="ruby-value">:basket_id</span>] = <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">id</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">basket_path</span>(<span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">id</span>), <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Basket was successfully created.'</span> }
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@basket</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:created</span>, <span class="ruby-identifier">location</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@basket</span> }
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;new&quot;</span> }
@@ -324,7 +366,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 78</span>
+            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@basket</span> = <span class="ruby-constant">Basket</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">destroy</span>
@@ -427,7 +469,7 @@
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
-  <span class="ruby-ivar">@basket</span> = <span class="ruby-constant">Basket</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@basket</span> = <span class="ruby-constant">Basket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>)
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># new.html.erb</span>
@@ -442,6 +484,76 @@
 
         
       </div><!-- new-method -->
+
+    
+      <div id="method-i-remove_variable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_variable</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove_variable-source">
+            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_variable</span>
+  <span class="ruby-ivar">@basket</span> = <span class="ruby-constant">Basket</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:basket_id</span>])
+  <span class="ruby-ivar">@variable_group</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;variable_id&quot;</span>]).<span class="ruby-identifier">variable_group</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">|</span> <span class="ruby-ivar">@variable_group</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">variable_groups</span>.<span class="ruby-identifier">delete</span> <span class="ruby-ivar">@variable_group</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_variable-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_variable-method -->
+
+    
+      <div id="method-i-set" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set-source">
+            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span>
+  <span class="ruby-identifier">session</span>[<span class="ruby-value">:basket_id</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;basket_id&quot;</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;basket_id&quot;</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">new_basket_path</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">basket_path</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;basket_id&quot;</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set-method -->
 
     
       <div id="method-i-show" class="method-detail ">
@@ -496,7 +608,7 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 62</span>
+            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-ivar">@basket</span> = <span class="ruby-constant">Basket</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
