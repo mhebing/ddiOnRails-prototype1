@@ -12,6 +12,7 @@ class Ability
       cannot :read, [Basket, UserProfile]
       can :read, [Basket, UserProfile], make_public: true
       can :manage, [Basket, UserProfile], user_id: user.id
+      can :set, [Basket, Group]
     end
     
     # The first argument to `can` is the action you are giving the user permission to do.
