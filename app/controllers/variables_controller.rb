@@ -5,7 +5,7 @@ class VariablesController < ApplicationController
   # GET /variables
   # GET /variables.json
   def index
-    @variables = Variable.all
+    @variables = Variable.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
