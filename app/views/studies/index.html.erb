@@ -12,7 +12,9 @@ Studies</h1>
 </div>
 
 <% if can? :manage, Study %>
+<div class="box admin">
 <%= link_to 'New Study', new_study_path %>
+</div>
 <% end %>
 </div>
 
