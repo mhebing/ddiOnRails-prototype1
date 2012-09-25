@@ -1,4 +1,8 @@
 DdiOnRails::Application.routes.draw do
+
+  match "bookmarks/variable" => "bookmarks#variable"
+  get "bookmarks/variable"
+
   resources :questionnaires
 
   resources :question_scales
