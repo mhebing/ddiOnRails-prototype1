@@ -23,6 +23,7 @@ class Variable < ActiveRecord::Base
 
   has_one :group, through: :physical_data_product
   has_one :question, through: :variable_group
+  has_one :concept, through: :variable_group
 
   def title
     if label.blank? then name else label end

@@ -19,12 +19,17 @@ class VariablesController < ApplicationController
     @variable = Variable.find(params[:id])
     @variable_statistics = @variable.variable_statistics
     @variable_categories = @variable.variable_categories
+
+    # Same Variable in different Groups of the same Study
     if @variable.variable_group.blank?
-      @variables = []
+      @group_variables = []
     else
-      @variables = @variable.variable_group.variables
-      @variables = @variables.sort_by { |var| var.group.name}
+      @group_variables = @variable.variable_group.variables
+      @group_variables = @group_variables.sort_by { |var| var.group.name}
     end
+
+    # Similar Variables in all Studies via Concept
+    @variables = @variable.concept.variables
 
     respond_to do |format|
       format.html # show.html.erb

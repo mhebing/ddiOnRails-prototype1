@@ -15,12 +15,14 @@
 <%= link_to 'Edit', edit_physical_data_product_path(@physical_data_product) %> |
 <%= link_to 'Back', physical_data_products_path %>
 <% end %>
+
+<div>
+<h2>Physical Instances in <%= @physical_data_product.title %></h2>
+<%= render 'physical_instances/table' %>
+</div>
 </div>
 
 <div class="span-16 last">
 <h2>Variables in <%= @physical_data_product.title %></h2>
 <%= render 'variables/table' %>
-
-<h2>Physical Instances in <%= @physical_data_product.title %></h2>
-<%= render 'physical_instances/table' %>
 </div>

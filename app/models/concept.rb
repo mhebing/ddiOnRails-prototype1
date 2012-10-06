@@ -17,6 +17,8 @@ class Concept < ActiveRecord::Base
   belongs_to :concept_group
   has_many :variable_groups
 
+  has_many :variables, through: :variable_groups
+
   def title
     if label.blank? then name else title end
   end
