@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
-<title>class PhysicalDataProduct - Rails Application Documentation</title>
+<title>class BookmarksController - Rails Application Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>app/models/physical_data_product.rb
+    <li>app/controllers/bookmarks_controller.rb
   </ul>
 </nav>
 
@@ -59,7 +59,7 @@
     <nav id="parent-class-section" class="section">
   <h3 class="section-header">Parent</h3>
   
-  <p class="link">ActiveRecord::Base
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
   
 </nav>
 
@@ -70,7 +70,7 @@
 
   <ul class="link-list">
     
-    <li><a href="#method-i-title">#title</a>
+    <li><a href="#method-i-variable">#variable</a>
     
   </ul>
 </nav>
@@ -236,22 +236,10 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class PhysicalDataProduct</h1>
+  <h1 class="class">class BookmarksController</h1>
 
   <div id="description" class="description">
     
-<h2 id="label-Schema+Information">Schema Information</h2>
-
-<p>Table name: physical_data_products</p>
-
-<pre>id                 :integer          not null, primary key
-name               :string(255)
-label              :string(255)
-group_id           :integer
-logical_product_id :integer
-created_at         :datetime         not null
-updated_at         :datetime         not null</pre>
-
   </div><!-- description -->
 
   
@@ -272,10 +260,10 @@ updated_at         :datetime         not null</pre>
       <h3 class="section-header">Public Instance Methods</h3>
 
     
-      <div id="method-i-title" class="method-detail ">
+      <div id="method-i-variable" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">title</span><span
+          <span class="method-name">variable</span><span
             class="method-args">()</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
@@ -287,19 +275,27 @@ updated_at         :datetime         not null</pre>
           
 
           
-          <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/physical_data_product.rb, line 22</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
+          <div class="method-source-code" id="variable-source">
+            <pre><span class="ruby-comment"># File app/controllers/bookmarks_controller.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">variable</span>
+  <span class="ruby-ivar">@study</span> = <span class="ruby-constant">Study</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:study_name</span>])
+  <span class="ruby-ivar">@group</span> = <span class="ruby-ivar">@study</span>.<span class="ruby-identifier">groups</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:group_name</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@study</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-ivar">@group</span>.<span class="ruby-identifier">physical_data_products</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:physical_data_product_name</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@group</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-ivar">@variable</span> = <span class="ruby-ivar">@physical_data_product</span>.<span class="ruby-identifier">variables</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:variable_name</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@physical_data_product</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">variable_path</span>(<span class="ruby-ivar">@variable</span>)
+  <span class="ruby-keyword">else</span> 
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-node">&quot;static_pages#home&quot;</span>
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- title-source -->
+          </div><!-- variable-source -->
           
         </div>
 
         
 
         
-      </div><!-- title-method -->
+      </div><!-- variable-method -->
 
     
     </section><!-- public-instance-method-details -->

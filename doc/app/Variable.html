@@ -107,6 +107,10 @@
   
     <li><a href="./BasketsHelper.html">BasketsHelper</a>
   
+    <li><a href="./BookmarksController.html">BookmarksController</a>
+  
+    <li><a href="./BookmarksHelper.html">BookmarksHelper</a>
+  
     <li><a href="./Concept.html">Concept</a>
   
     <li><a href="./ConceptGroup.html">ConceptGroup</a>
@@ -286,7 +290,7 @@ updated_at               :datetime         not null</pre>
 
           
           <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/variable.rb, line 27</span>
+            <pre><span class="ruby-comment"># File app/models/variable.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -316,7 +320,7 @@ updated_at               :datetime         not null</pre>
 
           
           <div class="method-source-code" id="to_compare-source">
-            <pre><span class="ruby-comment"># File app/models/variable.rb, line 31</span>
+            <pre><span class="ruby-comment"># File app/models/variable.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_compare</span>
   <span class="ruby-ivar">@compare</span> = {<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;label&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">label</span>}
   <span class="ruby-identifier">variable_categories</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">category</span><span class="ruby-operator">|</span>

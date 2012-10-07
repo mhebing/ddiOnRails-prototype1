@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
-<title>class PhysicalDataProduct - Rails Application Documentation</title>
+<title>module BookmarksHelper - Rails Application Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body id="top" class="class">
+<body id="top" class="module">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>app/models/physical_data_product.rb
+    <li>app/helpers/bookmarks_helper.rb
   </ul>
 </nav>
 
@@ -56,25 +56,9 @@
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">ActiveRecord::Base
-  
-</nav>
-
     
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
     
-    <li><a href="#method-i-title">#title</a>
     
-  </ul>
-</nav>
-
   </div>
 
   <div id="project-metadata">
@@ -236,22 +220,10 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class PhysicalDataProduct</h1>
+  <h1 class="module">module BookmarksHelper</h1>
 
   <div id="description" class="description">
     
-<h2 id="label-Schema+Information">Schema Information</h2>
-
-<p>Table name: physical_data_products</p>
-
-<pre>id                 :integer          not null, primary key
-name               :string(255)
-label              :string(255)
-group_id           :integer
-logical_product_id :integer
-created_at         :datetime         not null
-updated_at         :datetime         not null</pre>
-
   </div><!-- description -->
 
   
@@ -268,42 +240,6 @@ updated_at         :datetime         not null</pre>
 
     <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-title" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">title</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/physical_data_product.rb, line 22</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- title-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- title-method -->
-
-    
-    </section><!-- public-instance-method-details -->
-  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->

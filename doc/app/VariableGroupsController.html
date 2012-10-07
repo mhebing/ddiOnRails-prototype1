@@ -117,6 +117,10 @@
   
     <li><a href="./BasketsHelper.html">BasketsHelper</a>
   
+    <li><a href="./BookmarksController.html">BookmarksController</a>
+  
+    <li><a href="./BookmarksHelper.html">BookmarksHelper</a>
+  
     <li><a href="./Concept.html">Concept</a>
   
     <li><a href="./ConceptGroup.html">ConceptGroup</a>
@@ -464,7 +468,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
   <span class="ruby-ivar">@variable_group</span> = <span class="ruby-constant">VariableGroup</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@variables</span> = <span class="ruby-ivar">@variable_group</span>.<span class="ruby-identifier">variables</span>
-  <span class="ruby-ivar">@variables</span> = <span class="ruby-ivar">@variables</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">group</span>.<span class="ruby-identifier">name</span>}
+  <span class="ruby-ivar">@variable_groups</span> = <span class="ruby-ivar">@variables</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">group</span>.<span class="ruby-identifier">name</span>}
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># show.html.erb</span>
