@@ -25,6 +25,8 @@ class Variable < ActiveRecord::Base
   has_one :question, through: :variable_group
   has_one :concept, through: :variable_group
 
+  has_and_belongs_to_many :baskets
+
   def title
     if label.blank? then name else label end
   end

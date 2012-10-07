@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120908101059) do
+ActiveRecord::Schema.define(:version => 20121007083328) do
 
   create_table "baskets", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(:version => 20120908101059) do
   create_table "baskets_variable_groups", :id => false, :force => true do |t|
     t.integer "basket_id"
     t.integer "variable_group_id"
+  end
+
+  create_table "baskets_variables", :id => false, :force => true do |t|
+    t.integer "basket_id"
+    t.integer "variable_id"
   end
 
   create_table "concept_groups", :force => true do |t|

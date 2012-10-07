@@ -18,7 +18,7 @@ class VariableGroupsController < ApplicationController
   def show
     @variable_group = VariableGroup.find(params[:id])
     @variables = @variable_group.variables
-    @variables = @variables.sort_by { |var| var.group.name}
+    @variable_groups = @variables.sort_by { |var| var.group.name}
 
     respond_to do |format|
       format.html # show.html.erb

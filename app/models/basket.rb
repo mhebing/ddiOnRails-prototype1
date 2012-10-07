@@ -16,6 +16,7 @@ class Basket < ActiveRecord::Base
 
   belongs_to :user
   has_and_belongs_to_many :variable_groups
+  has_and_belongs_to_many :variables
 
   def title
     name

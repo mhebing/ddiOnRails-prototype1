@@ -18,6 +18,7 @@ class BasketsController < ApplicationController
   def show
     @basket = Basket.find(params[:id])
     @variable_groups = @basket.variable_groups
+    @variables = @basket.variables
 
     respond_to do |format|
       format.html # show.html.erb

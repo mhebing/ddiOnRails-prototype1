@@ -18,6 +18,7 @@
 </div>
 
 <div class="span-16 last">
+<div>
 <h2>Variable Groups in <%= @basket.title %></h2>
 <%= unless session[:group_id].blank?
       render 'variable_groups_table'
@@ -25,4 +26,12 @@
       flash[:notice] = "Please select a Group"
       render 'variable_groups/table'
     end %>
+</hr>
+</div>
+
+<div>
+<h2>Variables</h2>
+<%= render 'variables/table' %>
+</div>
+
 </div>
