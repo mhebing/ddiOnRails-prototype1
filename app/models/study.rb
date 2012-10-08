@@ -19,11 +19,26 @@ class Study < ActiveRecord::Base
 
   has_many :variable_groups, through: :groups
 
+  #
+  # == Title
+  #
+  # Returns the title of the Study:
+  # * +label+, if +label+ exists, otherwise
+  # * +name+.
+  #
   def title
     if label.blank? then name else label end
   end
 
-
+  #
+  # == Import
+  #
+  # Import StudyUnits from CSV file.
+  # This corresponds to the logical level.
+  #
+  # *Args:*
+  # * +filename+ (Default: import/study_units.csv)
+  #
   def import(filename="import/study_units.csv")
     require 'csv'
     CSV.foreach(filename, headers: true) do |row|
@@ -40,6 +55,16 @@ class Study < ActiveRecord::Base
     end
   end
 
+  #
+  # == Import SOEPinfo1
+  #
+  # Import for data from SOEPinfo v.1.
+  # This corresponds to the physical level
+  #
+  # *Args:*
+  # * +filename+ (Default: "import/soepinfo1.csv")
+  # * +group+ (Default: "v1")
+  #
   def import_soepinfo1(filename="import/soepinfo1.csv", group="v1")
     @group = Group.find_or_create_by_name_and_study_id(group, id)
     Study.transaction do

@@ -2,8 +2,8 @@ class BasketsController < ApplicationController
 
   load_and_authorize_resource
 
-  # GET /baskets
-  # GET /baskets.json
+  # * GET /baskets
+  # * GET /baskets.json
   def index
     @baskets = Basket.all
 
@@ -13,8 +13,8 @@ class BasketsController < ApplicationController
     end
   end
 
-  # GET /baskets/1
-  # GET /baskets/1.json
+  # * GET /baskets/1
+  # * GET /baskets/1.json
   def show
     @basket = Basket.find(params[:id])
     @variable_groups = @basket.variable_groups
@@ -26,8 +26,8 @@ class BasketsController < ApplicationController
     end
   end
 
-  # GET /baskets/new
-  # GET /baskets/new.json
+  # * GET /baskets/new
+  # * GET /baskets/new.json
   def new
     @basket = Basket.new(user_id: current_user.id)
 
@@ -37,13 +37,13 @@ class BasketsController < ApplicationController
     end
   end
 
-  # GET /baskets/1/edit
+  # * GET /baskets/1/edit
   def edit
     @basket = Basket.find(params[:id])
   end
 
-  # POST /baskets
-  # POST /baskets.json
+  # * POST /baskets
+  # * POST /baskets.json
   def create
     @basket = Basket.new(params[:basket])
 
@@ -59,8 +59,8 @@ class BasketsController < ApplicationController
     end
   end
 
-  # PUT /baskets/1
-  # PUT /baskets/1.json
+  # * PUT /baskets/1
+  # * PUT /baskets/1.json
   def update
     @basket = Basket.find(params[:id])
 
@@ -75,8 +75,8 @@ class BasketsController < ApplicationController
     end
   end
 
-  # DELETE /baskets/1
-  # DELETE /baskets/1.json
+  # * DELETE /baskets/1
+  # * DELETE /baskets/1.json
   def destroy
     @basket = Basket.find(params[:id])
     @basket.destroy
@@ -87,6 +87,16 @@ class BasketsController < ApplicationController
     end
   end
 
+  #
+  # Set Basket for the current Session. If blank,
+  # then create a new Basket.
+  #
+  # *Params:*
+  # * +:basket_id+
+  #
+  # *Session:*
+  # * +:basket_id+
+  #
   def set
     session[:basket_id] = params["basket_id"]
     if params["basket_id"] == ""
@@ -96,6 +106,12 @@ class BasketsController < ApplicationController
     end
   end
 
+  #
+  # Add a Variable to the Basket
+  #
+  # *Params:*
+  # * +:variable_id+
+  #
   def add_variable
     @basket = Basket.find(session[:basket_id])
     @variable_group = Variable.find(params["variable_id"]).variable_group
@@ -108,6 +124,12 @@ class BasketsController < ApplicationController
     redirect_to request.referer
   end
 
+  #
+  # Remove Variable from the Basket
+  #
+  # *Params:*
+  # * +:variable_id+
+  #
   def remove_variable
     @basket = Basket.find(session[:basket_id])
     @variable_group = Variable.find(params["variable_id"]).variable_group

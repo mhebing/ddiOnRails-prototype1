@@ -20,6 +20,9 @@ class Basket < ActiveRecord::Base
   has_and_belongs_to_many :variable_groups
   has_and_belongs_to_many :variables
 
+  #
+  # Returns the +name+ of the Basket
+  #
   def title
     name
   end
