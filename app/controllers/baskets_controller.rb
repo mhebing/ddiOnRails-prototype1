@@ -102,6 +102,9 @@ class BasketsController < ApplicationController
     unless @basket.blank? | @variable_group.blank?
       @basket.variable_groups << @variable_group
     end
+    unless @basket.blank?
+      @basket.variables << Variable.find(params["variable_id"])
+    end
     redirect_to request.referer
   end
 
@@ -110,6 +113,9 @@ class BasketsController < ApplicationController
     @variable_group = Variable.find(params["variable_id"]).variable_group
     unless @basket.blank? | @variable_group.blank?
       @basket.variable_groups.delete @variable_group
+    end
+    unless @basket.blank?
+      @basket.variables << Variable.find(params["variable_id"])
     end
     redirect_to request.referer
   end

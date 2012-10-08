@@ -9,12 +9,14 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  make_public :boolean
+#  group_id    :integer
 #
 
 class Basket < ActiveRecord::Base
-  attr_accessible :description, :name, :user_id
+  attr_accessible :description, :name, :user_id, :group_id
 
   belongs_to :user
+  belongs_to :group
   has_and_belongs_to_many :variable_groups
   has_and_belongs_to_many :variables
 

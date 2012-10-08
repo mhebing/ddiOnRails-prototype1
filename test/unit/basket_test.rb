@@ -9,6 +9,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  make_public :boolean
+#  group_id    :integer
 #
 
 require 'test_helper'

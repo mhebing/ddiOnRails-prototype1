@@ -301,6 +301,9 @@
   <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">|</span> <span class="ruby-ivar">@variable_group</span>.<span class="ruby-identifier">blank?</span>
     <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">variable_groups</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@variable_group</span>
   <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">variables</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;variable_id&quot;</span>])
+  <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- add_variable-source -->
@@ -506,12 +509,15 @@
 
           
           <div class="method-source-code" id="remove_variable-source">
-            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 108</span>
+            <pre><span class="ruby-comment"># File app/controllers/baskets_controller.rb, line 111</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_variable</span>
   <span class="ruby-ivar">@basket</span> = <span class="ruby-constant">Basket</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:basket_id</span>])
   <span class="ruby-ivar">@variable_group</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;variable_id&quot;</span>]).<span class="ruby-identifier">variable_group</span>
   <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">|</span> <span class="ruby-ivar">@variable_group</span>.<span class="ruby-identifier">blank?</span>
     <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">variable_groups</span>.<span class="ruby-identifier">delete</span> <span class="ruby-ivar">@variable_group</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-ivar">@basket</span>.<span class="ruby-identifier">variables</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;variable_id&quot;</span>])
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span>
 <span class="ruby-keyword">end</span></pre>

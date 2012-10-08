@@ -10,5 +10,16 @@
 
 <p>
   <b>User:</b>
-  <%= @basket.user_id %>
+  <%= link_to @basket.user.user_profile.name,
+              @basket.user.user_profile unless
+              @basket.user.user_profile.blank? %>
+  (ID: <%= @basket.user_id %>)
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= link_to @basket.group.title,
+              @basket.group unless
+              @basket.group.blank? %>
+  (ID: <%= @basket.group_id %>)
 </p>
