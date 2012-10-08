@@ -12,8 +12,10 @@
 </div>
 
 <% if can? :manage, @group %>
+<div class="box admin">
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
+</div>
 <% end %>
 </div>
 

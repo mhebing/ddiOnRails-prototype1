@@ -12,8 +12,10 @@
 </div>
 
 <% if can? :manage, @data_collection %>
+<div class="box admin">
 <%= link_to 'Edit', edit_data_collection_path(@data_collection) %> |
 <%= link_to 'Back', data_collections_path %>
+</div>
 <% end %>
 </div>
 

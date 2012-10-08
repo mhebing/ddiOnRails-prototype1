@@ -12,7 +12,9 @@ Questions</h1>
 </div>
 
 <% if can? :manage, Question %>
+<div class="box admin">
 <%= link_to 'New Question', new_question_path %>
+</div>
 <% end %>
 </div>
 

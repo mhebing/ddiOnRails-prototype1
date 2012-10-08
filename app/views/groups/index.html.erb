@@ -12,7 +12,9 @@ Groups</h1>
 </div>
 
 <% if can? :manage, Group %>
+<div class="box admin">
 <%= link_to 'New Group', new_group_path %>
+</div>
 <% end %>
 </div>
 

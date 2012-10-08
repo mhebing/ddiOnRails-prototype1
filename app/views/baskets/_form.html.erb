@@ -24,7 +24,9 @@
   </div>
   <div class="field">
     <%= f.label :group_id %><br />
-    <%= f.number_field :group_id %>
+    <%= f.select :group_id,
+                 options_for_select(Group.all.map { |b|
+                   [b.name, b.id]}, @basket.group_id) %>
   </div>
   <div class="actions">
     <%= f.submit %>

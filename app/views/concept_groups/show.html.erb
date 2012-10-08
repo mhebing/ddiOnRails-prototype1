@@ -12,8 +12,10 @@
 </div>
 
 <% if can? :manage, @concept_group %>
+<div class="box admin">
 <%= link_to 'Edit', edit_concept_group_path(@concept_group) %> |
 <%= link_to 'Back', concept_groups_path %>
+</div>
 <% end %>
 </div>
 

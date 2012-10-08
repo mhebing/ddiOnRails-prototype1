@@ -9,5 +9,7 @@ Baskets</h1>
 <%= render 'table' %>
 
 <% if can? :manage, Basket %>
+<div class="box admin">
 <%= link_to 'New Basket', new_basket_path %>
+</div>
 <% end %>

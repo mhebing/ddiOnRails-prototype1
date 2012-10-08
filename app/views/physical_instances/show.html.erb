@@ -12,7 +12,9 @@
 </div>
 
 <% if can? :manage, @physical_instance %>
+<div class="box admin">
 <%= link_to 'Edit', edit_physical_instance_path(@physical_instance) %> |
 <%= link_to 'Back', physical_instances_path %>
+</div>
 <% end %>
 </div>

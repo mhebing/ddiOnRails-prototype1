@@ -12,8 +12,10 @@
 </div>
 
 <% if can? :manage, @basket %>
+<div class="box admin">
 <%= link_to 'Edit', edit_basket_path(@basket) %> |
 <%= link_to 'Back', baskets_path %>
+</div>
 <% end %>
 </div>
 

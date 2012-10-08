@@ -10,7 +10,9 @@ Data Collections</h1>
 </div>
 
 <% if can? :manage, DataCollection %>
+<div class="box admin">
 <%= link_to 'New Data collection', new_data_collection_path %>
+</div>
 <% end %>
 </div>
 

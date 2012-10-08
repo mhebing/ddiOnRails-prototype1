@@ -10,7 +10,9 @@ Study Units</h1>
 </div>
 
 <% if can? :manage, StudyUnit %>
+<div class="box admin">
 <%= link_to 'New Study unit', new_study_unit_path %>
+</div>
 <% end %>
 </div>
 

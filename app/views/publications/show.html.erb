@@ -12,7 +12,9 @@
 </div>
 
 <% if can? :manage, @publication %>
+<div class="box admin">
 <%= link_to 'Edit', edit_publication_path(@publication) %> |
 <%= link_to 'Back', publications_path %>
+</div>
 <% end %>
 </div>

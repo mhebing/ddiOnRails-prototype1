@@ -12,7 +12,9 @@ logical Products</h1>
 </div>
 
 <% if can? :manage, LogicalProduct %>
+<div class="box admin">
 <%= link_to 'New Logical product', new_logical_product_path %>
+</div>
 <% end %>
 </div>
 

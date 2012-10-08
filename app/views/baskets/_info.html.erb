@@ -10,7 +10,7 @@
 
 <p>
   <b>User:</b>
-  <%= link_to @basket.user.user_profile.name,
+  <%= link_to @basket.user.user_profile.title,
               @basket.user.user_profile unless
               @basket.user.user_profile.blank? %>
   (ID: <%= @basket.user_id %>)

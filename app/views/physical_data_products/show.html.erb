@@ -12,8 +12,10 @@
 </div>
 
 <% if can? :manage, @physical_data_product %>
+<div class="box admin">
 <%= link_to 'Edit', edit_physical_data_product_path(@physical_data_product) %> |
 <%= link_to 'Back', physical_data_products_path %>
+</div>
 <% end %>
 
 <div>

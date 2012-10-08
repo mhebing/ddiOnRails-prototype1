@@ -12,8 +12,10 @@
 </div>
 
 <% if can? :manage, @questionnaire %>
+<div class="box admin">
 <%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
 <%= link_to 'Back', questionnaires_path %>
+</div>
 <% end %>
 </div>
 

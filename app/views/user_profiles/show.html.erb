@@ -10,8 +10,10 @@
 </div>
 
 <% if can? :manage, @user_profile %>
+<div class="box admin">
 <%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
 <%= link_to 'Back', user_profiles_path %>
+</div>
 <% end %>
 </div>
 

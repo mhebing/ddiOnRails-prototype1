@@ -19,6 +19,6 @@ class UserProfile < ActiveRecord::Base
   has_many :baskets, through: :user
 
   def title
-    name
+    unless name.blank? then name else "Anonymous User" end
   end
 end

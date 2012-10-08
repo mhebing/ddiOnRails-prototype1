@@ -12,8 +12,10 @@
 </div>
 
 <% if can? :manage, @study_unit %>
+<div class="box admin">
 <%= link_to 'Edit', edit_study_unit_path(@study_unit) %> |
 <%= link_to 'Back', study_units_path %>
+</div>
 <% end %>
 </div>
 
