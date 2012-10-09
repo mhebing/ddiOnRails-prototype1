@@ -9,6 +9,7 @@
 #  study_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  current    :boolean
 #
 
 require 'test_helper'

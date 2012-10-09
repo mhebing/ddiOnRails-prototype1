@@ -70,6 +70,8 @@
 
   <ul class="link-list">
     
+    <li><a href="#method-c-find_create">::find_create</a>
+    
     <li><a href="#method-i-title">#title</a>
     
   </ul>
@@ -269,6 +271,42 @@ group_id    :integer</pre>
 
     <!-- Methods -->
     
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-find_create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_create</span><span
+            class="method-args">(attribute_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <h4 id="method-c-find_create-label-find_create%28attribute_hash%29"><a href="Basket.html#method-c-find_create">::find_create</a>(attribute_hash)</h4>
+          
+
+          
+          <div class="method-source-code" id="find_create-source">
+            <pre><span class="ruby-comment"># File app/models/basket.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_create</span>(<span class="ruby-identifier">attribute_hash</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">attribute_hash</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">attribute_hash</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_create-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
       <h3 class="section-header">Public Instance Methods</h3>
 
@@ -284,12 +322,14 @@ group_id    :integer</pre>
 
         <div class="method-description">
           
-          <p>Returns the <code>name</code> of the <a href="Basket.html">Basket</a></p>
+          <h4 id="method-i-title-label-title%28%29">title()</h4>
+
+<p>Returns the <code>name</code> of the <a href="Basket.html">Basket</a></p>
           
 
           
           <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/basket.rb, line 26</span>
+            <pre><span class="ruby-comment"># File app/models/basket.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
   <span class="ruby-identifier">name</span>
 <span class="ruby-keyword">end</span></pre>

@@ -3,6 +3,7 @@
     <th>Name</th>
     <th>Label</th>
     <th>Study</th>
+    <th>Current?</th>
   </tr>
 
 <% @groups.each do |group| %>
@@ -12,6 +13,7 @@
     <td><%= link_to group.study.name,
             group.study unless
             group.study.blank? %></td>
+    <td><%= group.current? %></td>
   </tr>
 <% end %>
 </table>
