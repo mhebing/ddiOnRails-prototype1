@@ -24,3 +24,9 @@
               @variable.variable_group.blank? %>
 </p>
 
+<p>
+  <b>Concept:</b>
+  <%= link_to @variable.concept.name,
+              @variable.concept unless
+              @variable.concept.blank? %>
+</p>

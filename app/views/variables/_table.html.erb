@@ -1,6 +1,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Concept</th>
     <th>Label</th>
     <th>Physical data product</th>
     <th>Variable group</th>
@@ -10,6 +11,9 @@
 <% @variables.each do |variable| %>
   <tr>
     <td><b><%= link_to variable.name, variable %></b></td>
+    <td><%= link_to variable.concept.name,
+                    variable.concept unless
+                    variable.concept.blank? %></td>
     <td><%= variable.label %></td>
     <td><%= link_to variable.physical_data_product.name,
             variable.physical_data_product unless

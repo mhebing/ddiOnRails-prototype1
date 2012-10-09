@@ -12,7 +12,7 @@
 #
 
 class Group < ActiveRecord::Base
-  attr_accessible :abstract, :label, :name, :study_id
+  attr_accessible :abstract, :label, :name, :study_id, :current
 
   belongs_to :study
   has_many :physical_data_products
