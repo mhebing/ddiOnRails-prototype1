@@ -1,0 +1,13 @@
+<% @studies.each do |study| %>
+<% unless @studies.first == study %>
+<hr>
+<% end %>
+<p>
+  <b><%= link_to study.title, study %>:</b>
+  <%= study.abstract %>
+  <%= link_to "[more]", study %>
+</p>
+<% end %>
+
+
+
