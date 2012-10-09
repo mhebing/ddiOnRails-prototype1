@@ -11,13 +11,28 @@
 
 <p>
   <b>Group:</b>
-  <%= @physical_data_product.group_id %>
+  <%= link_to @physical_data_product.group.name,
+              @physical_data_product.group unless
+              @physical_data_product.group.blank? %>
 </p>
 
 <p>
-  <b>Logical product:</b>
+  <b>Logical Product:</b>
   <%= link_to @physical_data_product.logical_product.name,
-      @physical_data_product.logical_product unless
-      @physical_data_product.logical_product.blank? %>
+              @physical_data_product.logical_product unless
+              @physical_data_product.logical_product.blank? %>
 </p>
 
+<p>
+  <b>Study Unit:</b>
+  <%= link_to @physical_data_product.study_unit.name,
+              @physical_data_product.study_unit unless
+              @physical_data_product.study_unit.blank? %>
+</p>
+
+<p>
+  <b>Study:</b>
+  <%= link_to @physical_data_product.study.name,
+              @physical_data_product.study unless
+              @physical_data_product.study.blank? %>
+</p>

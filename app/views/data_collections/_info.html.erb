@@ -10,10 +10,23 @@
 
 <p>
   <b>Abstract:</b>
-  <%= raw RedCloth.new(@data_collection.abstract).to_html unless @data_collection.abstract.blank? %>
+  <%= raw RedCloth.new(@data_collection.abstract).to_html unless
+          @data_collection.abstract.blank? %>
 </p>
 
 <p>
   <b>Study unit:</b>
-  <%= link_to @data_collection.study_unit.name, @data_collection.study_unit unless @data_collection.study_unit.blank? %>
+  <%= link_to @data_collection.study_unit.name,
+              @data_collection.study_unit unless
+              @data_collection.study_unit.blank? %>
 </p>
+
+<p>
+  <b>Study:</b>
+  <%= link_to @data_collection.study.name,
+              @data_collection.study unless
+              @data_collection.study.blank? %>
+</p>
+
+
+

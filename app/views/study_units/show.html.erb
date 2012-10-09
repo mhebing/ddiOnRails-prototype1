@@ -8,6 +8,7 @@
 <div class="span-8">
 <div class="box">
 <h2>Study Unit</h2>
+<hr>
 <%= render 'info' %>
 </div>
 
@@ -20,15 +21,15 @@
 </div>
 
 <div class="span-16 last">
-<div class="admin">
-<h2>Logical Products in <%= @study_unit.title %></h2>
-<%= render 'logical_products/table' %>
+<div>
+<h2>Data Collections in <%= @study_unit.title %></h2>
+<%= render 'data_collections/table' %>
 </div>
 
 <hr>
 
 <div>
-<h2>Data Collections in <%= @study_unit.title %></h2>
-<%= render 'data_collections/table' %>
+<h2>Logical Products in <%= @study_unit.title %></h2>
+<%= render 'logical_products/table' %>
 </div>
 </div>

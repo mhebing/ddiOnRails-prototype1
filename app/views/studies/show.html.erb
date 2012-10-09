@@ -8,6 +8,7 @@
 <div class="span-8">
 <div class="box">
 <h2>Study</h2>
+<hr>
 <%= render 'info' %>
 </div>
 
@@ -27,6 +28,7 @@
 <div class="span-8">
 <div class="box">
 <h2>Abstract</h2>
+<hr>
 <%= raw RedCloth.new(@study.abstract).to_html unless @study.abstract.blank? %>
 </div>
 </div>

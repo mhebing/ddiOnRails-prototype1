@@ -29,7 +29,7 @@ class VariablesController < ApplicationController
     end
 
     # Similar Variables in all Studies via Concept
-    @variables = @variable.concept.variables
+    @variables = @variable.concept.variables unless @variable.concept.blank?
 
     respond_to do |format|
       format.html # show.html.erb

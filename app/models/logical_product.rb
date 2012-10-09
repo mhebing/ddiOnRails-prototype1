@@ -20,6 +20,8 @@ class LogicalProduct < ActiveRecord::Base
   has_many :physical_data_products
   has_many :variable_groups
 
+  has_one :study, through: :study_unit
+
   def title
     if label.blank? then name else label end
   end

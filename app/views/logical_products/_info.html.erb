@@ -15,6 +15,13 @@
 </p>
 
 <p>
+  <b>Conceptual Product:</b>
+  <%= link_to @logical_product.conceptual_product.name,
+              @logical_product.conceptual_product unless
+              @logical_product.conceptual_product.blank? %>
+</p>
+
+<p>
   <b>Study unit:</b>
   <%= link_to @logical_product.study_unit.name, 
       @logical_product.study_unit unless
@@ -22,8 +29,8 @@
 </p>
 
 <p>
-  <b>Conceptual Product:</b>
-  <%= link_to @logical_product.conceptual_product.name,
-              @logical_product.conceptual_product unless
-              @logical_product.conceptual_product.blank? %>
+  <b>Study:</b>
+  <%= link_to @logical_product.study.name,
+              @logical_product.study unless
+              @logical_product.study.blank? %>
 </p>

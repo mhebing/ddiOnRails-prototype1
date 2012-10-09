@@ -17,6 +17,8 @@ class DataCollection < ActiveRecord::Base
   belongs_to :study_unit
   has_many :questionnaires
 
+  has_one :study, through: :study_unit
+
   def title
     if label.blank? then name else label end
   end

@@ -18,6 +18,8 @@ class PhysicalDataProduct < ActiveRecord::Base
   belongs_to :logical_product
   has_many :variables
   has_many :physical_instances
+  has_one :study_unit, through: :logical_product
+  has_one :study, through: :logical_product
 
   def title
     if label.blank? then name else label end

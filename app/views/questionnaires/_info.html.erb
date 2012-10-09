@@ -13,7 +13,27 @@
   <%= @questionnaire.abstract %>
 </p>
 
+<hr>
+
+<p>
+  <b>Study:</b>
+  <%= link_to @questionnaire.study.name,
+              @questionnaire.study unless
+              @questionnaire.study.blank? %>
+</p>
+
+<p>
+  <b>Study Unit:</b>
+  <%= link_to @questionnaire.study_unit.name,
+              @questionnaire.study_unit unless
+              @questionnaire.study_unit.blank? %>
+</p>
+
 <p>
   <b>Data collection:</b>
-  <%= @questionnaire.data_collection_id %>
+  <%= link_to @questionnaire.data_collection.name,
+              @questionnaire.data_collection unless
+              @questionnaire.data_collection.blank? %>
 </p>
+
+

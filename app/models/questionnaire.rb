@@ -17,6 +17,9 @@ class Questionnaire < ActiveRecord::Base
   belongs_to :data_collection
   has_many :questions
 
+  has_one :study_unit, through: :data_collection
+  has_one :study, through: :data_collection
+
   def title
     if label.blank? then name else label end
   end

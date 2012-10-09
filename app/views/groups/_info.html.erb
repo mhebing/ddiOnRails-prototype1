@@ -15,11 +15,12 @@
 </p>
 
 <p>
+  <b>Current Group?</b>
+  <%= @group.current? %>
+</p>
+
+<p>
   <b>Study:</b>
   <%= link_to @group.study.name, @group.study %>
 </p>
 
-<p>
-  <b>Current Group?</b>
-  <%= @group.current? %>
-</p>
