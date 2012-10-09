@@ -21,10 +21,25 @@ class Group < ActiveRecord::Base
   has_many :variables, through: :physical_data_products
   has_many :variable_groups, through: :variables
 
+  #
+  # ==== title()
+  #
   def title
     if label.blank? then name else label end
   end
 
+  #
+  # ==== find_create(attribute_hash)
+  #
+  def self.find_create(attribute_hash)
+    self.where(attribute_hash).first || self.create(attribute_hash)
+  end
+
+  #
+  # ==== import(filename)
+  #
+  # Import DDI 2.5 compliant XML file with dataset descriptions.
+  #
   def import(filename = "import/group.xml")
     file = File.open(filename)
     group = Nokogiri::XML(file)
@@ -53,11 +68,5 @@ class Group < ActiveRecord::Base
     end
   end
 
-  #
-  # ==== find_create(attribute_hash)
-  #
-  def self.find_create(attribute_hash)
-    self.where(attribute_hash).first || self.create(attribute_hash)
-  end
 
 end

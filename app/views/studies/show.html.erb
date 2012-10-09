@@ -17,14 +17,30 @@
 <%= link_to 'Back', studies_path %>
 </div>
 <% end %>
+
 </div>
+
+
+
+<div class="span-16 last">
+
+<div class="span-8">
+<div class="box">
+<h2>Abstract</h2>
+<%= raw RedCloth.new(@study.abstract).to_html unless @study.abstract.blank? %>
+</div>
+</div>
+
+<div class="span-8 last">
+<h2>Groups in <%= @study.title %></h2>
+<%= render 'groups/table' %>
+</div>
+
+<hr>
 
 <div class="span-16 last">
 <h2>Study Units in <%= @study.title %></h2>
 <%= render 'study_units/table' %>
+</div>
 
-<hr>
-
-<h2>Groups in <%= @study.title %></h2>
-<%= render 'groups/table' %>
 </div>
