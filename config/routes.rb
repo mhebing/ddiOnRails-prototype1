@@ -1,5 +1,7 @@
 DdiOnRails::Application.routes.draw do
 
+  resources :conceptual_products
+
   match "bookmarks/variable" => "bookmarks#variable"
   get "bookmarks/variable"
 

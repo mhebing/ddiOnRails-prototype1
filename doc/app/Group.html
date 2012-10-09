@@ -125,6 +125,12 @@
   
     <li><a href="./ConceptsHelper.html">ConceptsHelper</a>
   
+    <li><a href="./ConceptualProduct.html">ConceptualProduct</a>
+  
+    <li><a href="./ConceptualProductsController.html">ConceptualProductsController</a>
+  
+    <li><a href="./ConceptualProductsHelper.html">ConceptualProductsHelper</a>
+  
     <li><a href="./DataCollection.html">DataCollection</a>
   
     <li><a href="./DataCollectionsController.html">DataCollectionsController</a>
@@ -293,7 +299,7 @@ current    :boolean</pre>
 
           
           <div class="method-source-code" id="find_create-source">
-            <pre><span class="ruby-comment"># File app/models/group.rb, line 59</span>
+            <pre><span class="ruby-comment"># File app/models/group.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_create</span>(<span class="ruby-identifier">attribute_hash</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">attribute_hash</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">attribute_hash</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -324,12 +330,14 @@ current    :boolean</pre>
 
         <div class="method-description">
           
-          
+          <h4 id="method-i-import-label-import%28filename%29">import(filename)</h4>
+
+<p>Import DDI 2.5 compliant XML file with dataset descriptions.</p>
           
 
           
           <div class="method-source-code" id="import-source">
-            <pre><span class="ruby-comment"># File app/models/group.rb, line 28</span>
+            <pre><span class="ruby-comment"># File app/models/group.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">import</span>(<span class="ruby-identifier">filename</span> = <span class="ruby-string">&quot;import/group.xml&quot;</span>)
   <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-identifier">group</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">file</span>)
@@ -378,12 +386,12 @@ current    :boolean</pre>
 
         <div class="method-description">
           
-          
+          <h4 id="method-i-title-label-title%28%29">title()</h4>
           
 
           
           <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/group.rb, line 24</span>
+            <pre><span class="ruby-comment"># File app/models/group.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

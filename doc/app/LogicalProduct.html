@@ -123,6 +123,12 @@
   
     <li><a href="./ConceptsHelper.html">ConceptsHelper</a>
   
+    <li><a href="./ConceptualProduct.html">ConceptualProduct</a>
+  
+    <li><a href="./ConceptualProductsController.html">ConceptualProductsController</a>
+  
+    <li><a href="./ConceptualProductsHelper.html">ConceptualProductsHelper</a>
+  
     <li><a href="./DataCollection.html">DataCollection</a>
   
     <li><a href="./DataCollectionsController.html">DataCollectionsController</a>
@@ -246,13 +252,14 @@
 
 <p>Table name: logical_products</p>
 
-<pre>id            :integer          not null, primary key
-name          :string(255)
-label         :string(255)
-abstract      :text
-study_unit_id :integer
-created_at    :datetime         not null
-updated_at    :datetime         not null</pre>
+<pre>id                    :integer          not null, primary key
+name                  :string(255)
+label                 :string(255)
+abstract              :text
+study_unit_id         :integer
+created_at            :datetime         not null
+updated_at            :datetime         not null
+conceptual_product_id :integer</pre>
 
   </div><!-- description -->
 
@@ -290,7 +297,7 @@ updated_at    :datetime         not null</pre>
 
           
           <div class="method-source-code" id="find_create-source">
-            <pre><span class="ruby-comment"># File app/models/logical_product.rb, line 28</span>
+            <pre><span class="ruby-comment"># File app/models/logical_product.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_create</span>(<span class="ruby-identifier">attribute_hash</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">attribute_hash</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">attribute_hash</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -326,7 +333,7 @@ updated_at    :datetime         not null</pre>
 
           
           <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/logical_product.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/models/logical_product.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

@@ -1,4 +1,4 @@
-Tue, 09 Oct 2012 12:03:50 +0200
+Tue, 09 Oct 2012 18:07:37 +0200
 doc/README_FOR_APP	Mon, 03 Sep 2012 10:01:59 +0200
 app/helpers/variable_groups_helper.rb	Mon, 03 Sep 2012 10:10:33 +0200
 app/helpers/variables_helper.rb	Mon, 03 Sep 2012 10:10:39 +0200
@@ -8,6 +8,7 @@ app/helpers/bookmarks_helper.rb	Tue, 25 Sep 2012 10:17:13 +0200
 app/helpers/variable_categories_helper.rb	Tue, 04 Sep 2012 10:41:10 +0200
 app/helpers/study_units_helper.rb	Mon, 03 Sep 2012 10:09:47 +0200
 app/helpers/question_answers_helper.rb	Sat, 08 Sep 2012 11:57:52 +0200
+app/helpers/conceptual_products_helper.rb	Tue, 09 Oct 2012 17:49:49 +0200
 app/helpers/publications_helper.rb	Tue, 04 Sep 2012 15:11:20 +0200
 app/helpers/physical_instances_helper.rb	Tue, 04 Sep 2012 14:11:53 +0200
 app/helpers/concepts_helper.rb	Mon, 03 Sep 2012 10:10:22 +0200
@@ -25,14 +26,14 @@ app/helpers/concept_groups_helper.rb	Mon, 03 Sep 2012 10:10:16 +0200
 app/helpers/data_collections_helper.rb	Mon, 03 Sep 2012 10:09:59 +0200
 app/models/user.rb	Fri, 07 Sep 2012 08:56:39 +0200
 app/models/physical_data_product.rb	Tue, 09 Oct 2012 09:33:38 +0200
-app/models/group.rb	Tue, 09 Oct 2012 12:03:37 +0200
+app/models/group.rb	Tue, 09 Oct 2012 15:46:15 +0200
 app/models/question_answer.rb	Tue, 09 Oct 2012 09:34:05 +0200
 app/models/questionnaire.rb	Tue, 09 Oct 2012 09:34:13 +0200
 app/models/study_unit.rb	Tue, 09 Oct 2012 09:34:39 +0200
 app/models/publication.rb	Tue, 09 Oct 2012 09:33:55 +0200
 app/models/study.rb	Tue, 09 Oct 2012 09:34:34 +0200
 app/models/question_scale.rb	Tue, 09 Oct 2012 09:34:25 +0200
-app/models/logical_product.rb	Tue, 09 Oct 2012 09:33:27 +0200
+app/models/logical_product.rb	Tue, 09 Oct 2012 18:07:07 +0200
 app/models/physical_instance.rb	Tue, 09 Oct 2012 09:33:47 +0200
 app/models/concept_group.rb	Tue, 09 Oct 2012 09:32:49 +0200
 app/models/variable_statistic.rb	Tue, 09 Oct 2012 09:35:24 +0200
@@ -42,6 +43,7 @@ app/models/ability.rb	Fri, 21 Sep 2012 10:35:10 +0200
 app/models/variable.rb	Tue, 09 Oct 2012 09:35:36 +0200
 app/models/data_collection.rb	Tue, 09 Oct 2012 09:33:07 +0200
 app/models/concept.rb	Tue, 09 Oct 2012 09:33:00 +0200
+app/models/conceptual_product.rb	Tue, 09 Oct 2012 18:07:07 +0200
 app/models/basket.rb	Tue, 09 Oct 2012 09:31:28 +0200
 app/models/question.rb	Tue, 09 Oct 2012 09:34:18 +0200
 app/models/user_profile.rb	Tue, 09 Oct 2012 09:34:44 +0200
@@ -61,6 +63,7 @@ app/controllers/studies_controller.rb	Mon, 03 Sep 2012 19:34:06 +0200
 app/controllers/publications_controller.rb	Fri, 07 Sep 2012 16:56:16 +0200
 app/controllers/application_controller.rb	Mon, 03 Sep 2012 16:28:29 +0200
 app/controllers/data_collections_controller.rb	Sat, 08 Sep 2012 12:13:59 +0200
+app/controllers/conceptual_products_controller.rb	Tue, 09 Oct 2012 18:02:27 +0200
 app/controllers/variable_groups_controller.rb	Mon, 08 Oct 2012 09:56:36 +0200
 app/controllers/static_pages_controller.rb	Fri, 07 Sep 2012 10:37:24 +0200
 app/controllers/variable_categories_controller.rb	Tue, 04 Sep 2012 10:55:20 +0200

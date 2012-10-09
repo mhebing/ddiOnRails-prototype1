@@ -21,3 +21,9 @@
       @logical_product.study_unit.blank? %>
 </p>
 
+<p>
+  <b>Conceptual Product:</b>
+  <%= link_to @logical_product.conceptual_product.name,
+              @logical_product.conceptual_product unless
+              @logical_product.conceptual_product.blank? %>
+</p>

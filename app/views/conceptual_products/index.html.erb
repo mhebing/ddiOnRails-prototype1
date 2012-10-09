@@ -1,0 +1,25 @@
+<div class="span-24">
+<h1><%= image_tag "icons/#{params["controller"]}.png", alt: "" %>
+Conceptual Products</h1>
+</div>
+
+<hr>
+
+<div class="span-8">
+<div class="box">
+<h2>About</h2>
+<%= render 'about' %>
+</div>
+
+<% if can? :manage, ConceptualProduct %>
+<div class="box admin">
+<%= link_to 'New Conceptual product', new_conceptual_product_path %>
+</div>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>All Conceptual Products</h2>
+<%= render 'table' %>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="span-24">
+<h1><%= image_tag "icons/#{params["controller"]}.png", alt: "" %>
+<%= @conceptual_product.title %></h2>
+</div>
+
+<hr>
+
+<div class="span-8">
+<div class="box">
+<h2>Conceptual Product</h2>
+<%= render 'info' %>
+</div>
+
+<% if can? :manage, @conceptual_product %>
+<div class="box admin">
+<%= link_to 'Edit', edit_conceptual_product_path(@conceptual_product) %> |
+<%= link_to 'Back', conceptual_products_path %>
+</div>
+<% end %>
+</div>
+
+<div class="span-16 last">
+<h2>Logical Products in <%= @conceptual_product.title %></h2>
+<%= render 'logical_products/table' %>
+</div>

@@ -1,0 +1,2 @@
+module ConceptualProductsHelper
+end

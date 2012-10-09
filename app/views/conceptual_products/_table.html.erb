@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Label</th>
+    <th>Abstract</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @conceptual_products.each do |conceptual_product| %>
+  <tr>
+    <td><%= conceptual_product.name %></td>
+    <td><%= conceptual_product.label %></td>
+    <td><%= conceptual_product.abstract %></td>
+    <td><%= link_to 'Show', conceptual_product %></td>
+    <td><%= link_to 'Edit', edit_conceptual_product_path(conceptual_product) %></td>
+    <td><%= link_to 'Destroy', conceptual_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
