@@ -14,4 +14,12 @@ class QuestionAnswer < ActiveRecord::Base
   attr_accessible :label, :question_id, :value
 
   belongs_to :question
+
+  #
+  # ==== find_create(attribute_hash)
+  #
+  def self.find_create(attribute_hash)
+    self.where(attribute_hash).first || self.create(attribute_hash)
+  end
+
 end

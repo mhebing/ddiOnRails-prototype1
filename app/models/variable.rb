@@ -27,10 +27,21 @@ class Variable < ActiveRecord::Base
 
   has_and_belongs_to_many :baskets
 
+  #
+  # ==== title()
+  #
+  # Returns (1) +label+ if exists, (2) otherwise +name+.
+  #
   def title
     if label.blank? then name else label end
   end
 
+  #
+  # ==== to_compare()
+  #
+  # Generates string representation of the Variable and
+  # its VariableCategories and VariableStatistics.
+  #
   def to_compare
     @compare = {"name" => name, "label" => label}
     variable_categories.each do |category|
@@ -45,4 +56,12 @@ class Variable < ActiveRecord::Base
     end
     return @compare
   end
+
+  #
+  # ==== find_create(attribute_hash)
+  #
+  def self.find_create(attribute_hash)
+    self.where(attribute_hash).first || self.create(attribute_hash)
+  end
+
 end

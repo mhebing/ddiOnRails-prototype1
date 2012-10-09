@@ -20,10 +20,20 @@ class Basket < ActiveRecord::Base
   has_and_belongs_to_many :variable_groups
   has_and_belongs_to_many :variables
 
+  # ==== title()
   #
   # Returns the +name+ of the Basket
   #
   def title
     name
   end
+
+  #
+  # ==== find_create(attribute_hash)
+  #
+  def self.find_create(attribute_hash)
+    self.where(attribute_hash).first || self.create(attribute_hash)
+  end
+
+
 end

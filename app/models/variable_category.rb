@@ -19,4 +19,12 @@ class VariableCategory < ActiveRecord::Base
   def title
     if label.blank? then value else label end
   end
+
+  #
+  # ==== find_create(attribute_hash)
+  #
+  def self.find_create(attribute_hash)
+    self.where(attribute_hash).first || self.create(attribute_hash)
+  end
+
 end
