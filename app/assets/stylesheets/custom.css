@@ -10,4 +10,5 @@ a:hover, a:focus, a:active {color: #9e1310;
 
 a:link:after, a:visited:after {content: none;}
 
-.admin {background: #FFFF77;}
+.admin {background: rgb(255, 234, 115);}
+
