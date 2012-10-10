@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121009160323) do
+ActiveRecord::Schema.define(:version => 20121010070654) do
 
   create_table "baskets", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20121009160323) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "parent_id"
+    t.integer  "sort_id"
   end
 
   create_table "concepts", :force => true do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20121009160323) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "label"
+    t.integer  "sort_id"
   end
 
   create_table "data_collections", :force => true do |t|
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20121009160323) do
     t.integer  "study_unit_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "sort_id"
   end
 
   create_table "groups", :force => true do |t|
@@ -157,6 +160,7 @@ ActiveRecord::Schema.define(:version => 20121009160323) do
     t.integer  "number"
     t.string   "type"
     t.integer  "questionnaire_id"
+    t.integer  "sort_id"
   end
 
   create_table "studies", :force => true do |t|
@@ -166,6 +170,7 @@ ActiveRecord::Schema.define(:version => 20121009160323) do
     t.text     "universe"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "sort_id"
   end
 
   create_table "study_units", :force => true do |t|
@@ -175,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20121009160323) do
     t.integer  "study_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "sort_id"
   end
 
   create_table "user_profiles", :force => true do |t|

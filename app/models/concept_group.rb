@@ -9,10 +9,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  parent_id  :integer
+#  sort_id    :integer
 #
 
 class ConceptGroup < ActiveRecord::Base
-  attr_accessible :abstract, :label, :name, :parent_id
+  attr_accessible :abstract, :label, :name, :parent_id, :sort_id
 
   has_many :concepts
   has_many :concept_groups, class_name: "ConceptGroup", foreign_key: "parent_id"

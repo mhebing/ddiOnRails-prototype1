@@ -12,10 +12,11 @@
 #  number           :integer
 #  type             :string(255)
 #  questionnaire_id :integer
+#  sort_id          :integer
 #
 
 class Question < ActiveRecord::Base
-  attr_accessible :description, :fix_name, :label, :name, :questionnaire_id
+  attr_accessible :description, :fix_name, :label, :name, :questionnaire_id, :sort_id
 
   belongs_to :questionnaire
   has_many :variable_groups

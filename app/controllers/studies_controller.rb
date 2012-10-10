@@ -5,7 +5,7 @@ class StudiesController < ApplicationController
   # GET /studies
   # GET /studies.json
   def index
-    @studies = Study.all
+    @studies = Study.find(:all, order: "sort_id, id")
 
     respond_to do |format|
       format.html # index.html.erb

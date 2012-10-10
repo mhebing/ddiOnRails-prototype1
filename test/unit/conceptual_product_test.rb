@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  label      :string(255)
+#  sort_id    :integer
 #
 
 require 'test_helper'

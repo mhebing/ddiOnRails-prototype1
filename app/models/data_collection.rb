@@ -9,10 +9,11 @@
 #  study_unit_id :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  sort_id       :integer
 #
 
 class DataCollection < ActiveRecord::Base
-  attr_accessible :abstract, :label, :name, :study_unit_id
+  attr_accessible :abstract, :label, :name, :study_unit_id, :sort_id
 
   belongs_to :study_unit
   has_many :questionnaires

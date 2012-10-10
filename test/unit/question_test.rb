@@ -12,6 +12,7 @@
 #  number           :integer
 #  type             :string(255)
 #  questionnaire_id :integer
+#  sort_id          :integer
 #
 
 require 'test_helper'

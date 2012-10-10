@@ -8,10 +8,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  label      :string(255)
+#  sort_id    :integer
 #
 
 class ConceptualProduct < ActiveRecord::Base
-  attr_accessible :abstract, :label, :name
+  attr_accessible :abstract, :label, :name, :sort_id
 
   has_many :logical_products
 

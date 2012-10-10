@@ -9,10 +9,11 @@
 #  universe   :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  sort_id    :integer
 #
 
 class Study < ActiveRecord::Base
-  attr_accessible :abstract, :label, :name, :universe
+  attr_accessible :abstract, :label, :name, :universe, :sort_id
 
   has_many :groups
   has_many :study_units

@@ -9,10 +9,11 @@
 #  study_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  sort_id    :integer
 #
 
 class StudyUnit < ActiveRecord::Base
-  attr_accessible :abstract, :label, :name, :study_id
+  attr_accessible :abstract, :label, :name, :study_id, :sort_id
 
   belongs_to :study
   has_many :logical_products
