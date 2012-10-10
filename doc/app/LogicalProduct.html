@@ -297,7 +297,7 @@ conceptual_product_id :integer</pre>
 
           
           <div class="method-source-code" id="find_create-source">
-            <pre><span class="ruby-comment"># File app/models/logical_product.rb, line 30</span>
+            <pre><span class="ruby-comment"># File app/models/logical_product.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_create</span>(<span class="ruby-identifier">attribute_hash</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">attribute_hash</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">attribute_hash</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -333,7 +333,7 @@ conceptual_product_id :integer</pre>
 
           
           <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/logical_product.rb, line 23</span>
+            <pre><span class="ruby-comment"># File app/models/logical_product.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

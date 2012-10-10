@@ -260,7 +260,8 @@ label      :string(255)
 abstract   :text
 created_at :datetime         not null
 updated_at :datetime         not null
-parent_id  :integer</pre>
+parent_id  :integer
+sort_id    :integer</pre>
 
   </div><!-- description -->
 
@@ -298,7 +299,7 @@ parent_id  :integer</pre>
 
           
           <div class="method-source-code" id="find_create-source">
-            <pre><span class="ruby-comment"># File app/models/concept_group.rb, line 43</span>
+            <pre><span class="ruby-comment"># File app/models/concept_group.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_create</span>(<span class="ruby-identifier">attribute_hash</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">attribute_hash</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">attribute_hash</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -328,7 +329,7 @@ parent_id  :integer</pre>
 
           
           <div class="method-source-code" id="import-source">
-            <pre><span class="ruby-comment"># File app/models/concept_group.rb, line 25</span>
+            <pre><span class="ruby-comment"># File app/models/concept_group.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-string">&quot;import/concept_groups.csv&quot;</span>)
   <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
     <span class="ruby-ivar">@row</span> = <span class="ruby-identifier">row</span>.<span class="ruby-identifier">to_hash</span>
@@ -375,7 +376,7 @@ parent_id  :integer</pre>
 
           
           <div class="method-source-code" id="title-source">
-            <pre><span class="ruby-comment"># File app/models/concept_group.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/models/concept_group.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">label</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">else</span> <span class="ruby-identifier">label</span> <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

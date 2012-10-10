@@ -284,7 +284,7 @@
           <div class="method-source-code" id="home-source">
             <pre><span class="ruby-comment"># File app/controllers/static_pages_controller.rb, line 2</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">home</span>
-  <span class="ruby-ivar">@studies</span> = <span class="ruby-constant">Study</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@studies</span> = <span class="ruby-constant">Study</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-identifier">order</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;sort_id, id&quot;</span>)
   <span class="ruby-ivar">@concept_groups</span> = <span class="ruby-constant">ConceptGroup</span>.<span class="ruby-identifier">find_all_by_parent_id</span>(<span class="ruby-keyword">nil</span>)
 <span class="ruby-keyword">end</span></pre>
           </div><!-- home-source -->
