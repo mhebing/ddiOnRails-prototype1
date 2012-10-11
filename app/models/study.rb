@@ -90,4 +90,24 @@ class Study < ActiveRecord::Base
     self.where(attribute_hash).first || self.create(attribute_hash)
   end
 
+  #
+  # ==== import_structure(filename)
+  #
+  def import_structure(filename="import/structure.csv")
+    require 'csv'
+    Study.transaction do
+      CSV.foreach(filename = filename, headers: true) do |row|
+        @row = row.to_hash
+        @study_unit = StudyUnit.find_create(name: @row["study_unit"], study_id: id)
+        @logical_product = LogicalProduct.find_create(name: @row["logical_product"], study_unit_id: @study_unit.id)
+        @concept_group = ConceptGroup.find_create(name: @row["concept_group"])
+        @concept = Concept.find_create(name: @row["concept"], concept_group_id: @concept_group.id)
+        @questionnaire = Questionnaire.find_create(name: @row["questionnaire"])
+        @question = Question.find_create(number: @row["qlib"], questionnaire_id: @questionnaire.id)
+        @variable_group = VariableGroup.find_create(name: @row["variable_group"], concept_id: @concept.id, logical_product_id: @logical_product.id, question_id: @question.id)
+      end
+    end
+  end
+
+
 end

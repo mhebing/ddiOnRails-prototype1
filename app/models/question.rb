@@ -16,7 +16,7 @@
 #
 
 class Question < ActiveRecord::Base
-  attr_accessible :description, :fix_name, :label, :name, :questionnaire_id, :sort_id
+  attr_accessible :description, :fix_name, :label, :name, :questionnaire_id, :sort_id, :number
 
   belongs_to :questionnaire
   has_many :variable_groups

@@ -24,17 +24,18 @@ class ConceptGroup < ActiveRecord::Base
   end
 
   def self.import(filename="import/concept_groups.csv")
+    require 'csv'
     CSV.foreach(filename, :headers => true) do |row|
       @row = row.to_hash
-      if !@row["parent"].blank? &
-         !ConceptGroup.find_by_name(@row["parent"]).blank?
-      then
-        @row["parent_id"] = ConceptGroup.find_by_name(@row["parent"]).id
+      @concept_group = ConceptGroup.find_or_create_by_name(@row["name"])
+      unless @row["parent"].blank?
+        @concept_group.parent = ConceptGroup.find_or_create_by_name(@row["parent"])
       else
-        @row["parent_id"] = nil
+        @concept_group.parent = nil
       end
-      ConceptGroup.create(name: @row["name"],
-                          parent_id: @row["parent_id"])
+      @concept_group.label = @row["label"] unless @row["label"].blank?
+      @concept_group.sort_id = @row["sort_id"] unless @row["sort_id"].blank?
+      @concept_group.save
     end
   end
 
