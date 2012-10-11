@@ -30,9 +30,9 @@ class Questionnaire < ActiveRecord::Base
     file.close
 
     questionnaire.xpath("//Single | //Multi | //Open | //Grid").each do |question|
-      @question = Question.new
+      @question = Question.find_create(number: question.xpath("./Name").text.match(/^Q([0-9]*)/)[1], questionnaire_id: id)
       @question.questionnaire_id = id
-      @question.number = question.xpath("./Name").text
+      # @question.number = question.xpath("./Name").text
       @question.name   = question.xpath(".//FormText/Title").text
       @question.label  = question.xpath(".//FormText/Text").text
       question.xpath(".//Answers/Answer").each do |answer|
