@@ -71,14 +71,14 @@ class Study < ActiveRecord::Base
     @group = Group.find_or_create_by_name_and_study_id(group, id)
     Study.transaction do
       CSV.foreach(filename = filename, headers: true) do |row|
-      @row = row.to_hash
-      @study_unit = StudyUnit.find_or_create_by_name_and_study_id(@row["study_unit"], id)
-      @logical_product = LogicalProduct.find_or_create_by_name_and_study_unit_id(@row["product"], @study_unit.id)
-      @physical_data_product = PhysicalDataProduct.find_or_create_by_name_and_group_id(@row["product"], @group.id)
-      @concept = Concept.find_or_create_by_name(@row["concept"])
-      @variable_group = VariableGroup.find_or_create_by_name_and_logical_product_id_and_concept_id(@row["variable"], @logical_product.id, @concept.id)
-      @variable = Variable.find_or_create_by_name_and_physical_data_product_id_and_variable_group_id(@row["variable"], @physical_data_product.id, @variable_group.id)
-      @variable_category = VariableCategory.create(value: @row["category_val"], label: @row["category_lab"], variable_id: @variable.id)
+        @row = row.to_hash
+        @study_unit = StudyUnit.find_or_create_by_name_and_study_id(@row["study_unit"], id)
+        @logical_product = LogicalProduct.find_or_create_by_name_and_study_unit_id(@row["product"], @study_unit.id)
+        @physical_data_product = PhysicalDataProduct.find_or_create_by_name_and_group_id(@row["product"], @group.id)
+        @concept = Concept.find_or_create_by_name(@row["concept"])
+        @variable_group = VariableGroup.find_or_create_by_name_and_logical_product_id_and_concept_id(@row["variable"], @logical_product.id, @concept.id)
+        @variable = Variable.find_or_create_by_name_and_physical_data_product_id_and_variable_group_id(@row["variable"], @physical_data_product.id, @variable_group.id)
+        @variable_category = VariableCategory.create(value: @row["category_val"], label: @row["category_lab"], variable_id: @variable.id)
       end
     end
 
