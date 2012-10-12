@@ -24,3 +24,26 @@
 <h2>Variables in <%= @variable_group.title %></h2>
 <%= render 'variables/comparison' %>
 </div>
+
+<hr>
+
+<div class="span-8">
+  <div class="box">
+    <h2>Question</h2>
+    <hr>
+    <%= render 'questions/info' %>
+  </div>
+</div>
+
+<div class="span-8">
+  <h2>Answers</h2>
+  <%= render 'question_answers/table' %>
+</div>
+
+
+<div class="span-8 last">
+  <h2>Scales</h2>
+  <%= render 'question_scales/table' %>
+</div>
+
+

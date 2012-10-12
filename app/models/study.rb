@@ -19,6 +19,7 @@ class Study < ActiveRecord::Base
   has_many :study_units
 
   has_many :variable_groups, through: :groups
+  has_many :logical_products, through: :study_units
 
   #
   # == Title

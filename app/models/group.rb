@@ -40,18 +40,29 @@ class Group < ActiveRecord::Base
   #
   # Import DDI 2.5 compliant XML file with dataset descriptions.
   #
-  def import(filename = "import/group.xml")
+  def import_product(filename = "import/group.xml", physical_product = "default")
     file = File.open(filename)
     group = Nokogiri::XML(file)
     file.close
 
     group.xpath("//var").each do |var|
       if var.xpath("@files").blank?
-        then @physical_data_product = PhysicalDataProduct.find_or_create_by_name_and_group_id("default", id)
-        else @physical_data_product = PhysicalDataProduct.find_or_create_by_name_and_group_id(var.xpath("@files"), id)
+        @physical_data_product = PhysicalDataProduct.find_create(
+          name: physical_product, group_id: id)
+      else
+        @physical_data_product = PhysicalDataProduct.find_create(
+          name: var.xpath("@files"), group_id: id)
+      end
+
+      @logical_product = study.logical_products.find_by_name(@physical_data_product.name)
+      if @logical_product.blank?
+        @study_unit = StudyUnit.find_create(name: "default", study_id: study.id)
+        @logcial_product = LogicalProduct.find_create(name: physical_product, study_unit_id: @study_unit.id)
       end
       @variable = Variable.new
       @variable.name = var.xpath("@name").to_s unless var.xpath("@name").blank?
+      @variable.variable_group = VariableGroup.find_create(
+        name: @variable.name, logical_product_id: @logical_product.id)
       @variable.label = var.xpath(".//labl").children.to_s unless var.xpath(".//labl").blank?
       @variable.physical_data_product = @physical_data_product
       var.xpath(".//sumStat").each do |sumStat|
