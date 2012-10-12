@@ -20,10 +20,8 @@ class VariableGroupsController < ApplicationController
     @variables = @variable_group.variables
     @group_variables = @variables.sort_by { |var| var.group.name}
     @question = @variable_group.question
-    @question_scales = @question.question_scales
-    @question_answers = @question.question_answers
-    @question_scales = @question.question_scales
-    @question_answers = @question.question_answers
+    @question_scales = @question.question_scales unless @question.blank?
+    @question_answers = @question.question_answers unless @question.blank?
 
     respond_to do |format|
       format.html # show.html.erb
