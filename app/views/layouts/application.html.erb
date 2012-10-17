@@ -20,8 +20,8 @@
   <p>
   <b><%= current_user.email %></b> |
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> |
-  <%= if UserProfile.exists?(current_user.id)
-        link_to('My user profile', user_profile_path(current_user.id))
+  <%= if UserProfile.exists?(current_user.user_profile.id)
+        link_to('My user profile', user_profile_path(current_user.user_profile.id))
       else
         link_to('Create my user profile', new_user_profile_path)
       end %>

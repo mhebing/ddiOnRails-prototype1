@@ -5,7 +5,7 @@
     <th>Frequency</th>
   </tr>
 
-<% @variable_categories.each do |variable_category| %>
+<% @variable_categories.order("value").each do |variable_category| %>
   <tr>
     <td><b><%= variable_category.value %></b></td>
     <td><%= variable_category.label %></td>
