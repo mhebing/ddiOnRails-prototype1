@@ -72,7 +72,7 @@
     
     <li><a href="#method-c-find_create">::find_create</a>
     
-    <li><a href="#method-i-import">#import</a>
+    <li><a href="#method-i-import_product">#import_product</a>
     
     <li><a href="#method-i-title">#title</a>
     
@@ -319,37 +319,48 @@ current    :boolean</pre>
       <h3 class="section-header">Public Instance Methods</h3>
 
     
-      <div id="method-i-import" class="method-detail ">
+      <div id="method-i-import_product" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">import</span><span
-            class="method-args">(filename = "import/group.xml")</span>
+          <span class="method-name">import_product</span><span
+            class="method-args">(filename = "import/group.xml", physical_product = "default")</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
 
         <div class="method-description">
           
-          <h4 id="method-i-import-label-import%28filename%29">import(filename)</h4>
+          <h4 id="method-i-import_product-label-import%28filename%29">import(filename)</h4>
 
 <p>Import DDI 2.5 compliant XML file with dataset descriptions.</p>
           
 
           
-          <div class="method-source-code" id="import-source">
+          <div class="method-source-code" id="import_product-source">
             <pre><span class="ruby-comment"># File app/models/group.rb, line 43</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">import</span>(<span class="ruby-identifier">filename</span> = <span class="ruby-string">&quot;import/group.xml&quot;</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">import_product</span>(<span class="ruby-identifier">filename</span> = <span class="ruby-string">&quot;import/group.xml&quot;</span>, <span class="ruby-identifier">physical_product</span> = <span class="ruby-string">&quot;default&quot;</span>)
   <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-identifier">group</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">file</span>)
   <span class="ruby-identifier">file</span>.<span class="ruby-identifier">close</span>
 
   <span class="ruby-identifier">group</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;//var&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@files&quot;</span>).<span class="ruby-identifier">blank?</span>
-      <span class="ruby-keyword">then</span> <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find_or_create_by_name_and_group_id</span>(<span class="ruby-string">&quot;default&quot;</span>, <span class="ruby-identifier">id</span>)
-      <span class="ruby-keyword">else</span> <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find_or_create_by_name_and_group_id</span>(<span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@files&quot;</span>), <span class="ruby-identifier">id</span>)
+      <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find_create</span>(
+        <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">physical_product</span>, <span class="ruby-identifier">group_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@physical_data_product</span> = <span class="ruby-constant">PhysicalDataProduct</span>.<span class="ruby-identifier">find_create</span>(
+        <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@files&quot;</span>), <span class="ruby-identifier">group_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@logical_product</span> = <span class="ruby-identifier">study</span>.<span class="ruby-identifier">logical_products</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-ivar">@physical_data_product</span>.<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@logical_product</span>.<span class="ruby-identifier">blank?</span>
+      <span class="ruby-ivar">@study_unit</span> = <span class="ruby-constant">StudyUnit</span>.<span class="ruby-identifier">find_create</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;default&quot;</span>, <span class="ruby-identifier">study_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">study</span>.<span class="ruby-identifier">id</span>)
+      <span class="ruby-ivar">@logcial_product</span> = <span class="ruby-constant">LogicalProduct</span>.<span class="ruby-identifier">find_create</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">physical_product</span>, <span class="ruby-identifier">study_unit_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@study_unit</span>.<span class="ruby-identifier">id</span>)
     <span class="ruby-keyword">end</span>
     <span class="ruby-ivar">@variable</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">new</span>
     <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@name&quot;</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;@name&quot;</span>).<span class="ruby-identifier">blank?</span>
+    <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">variable_group</span> = <span class="ruby-constant">VariableGroup</span>.<span class="ruby-identifier">find_create</span>(
+      <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">logical_product_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@logical_product</span>.<span class="ruby-identifier">id</span>)
     <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">label</span> = <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//labl&quot;</span>).<span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//labl&quot;</span>).<span class="ruby-identifier">blank?</span>
     <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">physical_data_product</span> = <span class="ruby-ivar">@physical_data_product</span>
     <span class="ruby-identifier">var</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;.//sumStat&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sumStat</span><span class="ruby-operator">|</span>
@@ -365,14 +376,14 @@ current    :boolean</pre>
     <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">save</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- import-source -->
+          </div><!-- import_product-source -->
           
         </div>
 
         
 
         
-      </div><!-- import-method -->
+      </div><!-- import_product-method -->
 
     
       <div id="method-i-title" class="method-detail ">
