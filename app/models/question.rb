@@ -23,6 +23,8 @@ class Question < ActiveRecord::Base
   has_many :question_answers
   has_many :question_scales
 
+  has_many :variables, through: :variable_groups
+
   def title
     if label.blank? then name else label end
   end

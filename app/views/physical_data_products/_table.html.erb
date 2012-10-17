@@ -6,7 +6,7 @@
     <th>Logical product</th>
   </tr>
 
-<% @physical_data_products.each do |physical_data_product| %>
+<% @physical_data_products.order("name").each do |physical_data_product| %>
   <tr>
     <td><b><%= link_to physical_data_product.name, physical_data_product %></b></td>
     <td><%= physical_data_product.label %></td>

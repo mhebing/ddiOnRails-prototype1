@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
     @question_scales = @question.question_scales
     @question_answers = @question.question_answers
     @variable_groups = @question.variable_groups
+    @variables = @question.variables
 
     respond_to do |format|
       format.html # show.html.erb
