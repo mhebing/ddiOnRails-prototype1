@@ -2,7 +2,7 @@
 <% unless @studies.first == study %>
 <hr>
 <% end %>
-<h3><%= link_to study.title, study %></h3>
+<h2><%= link_to study.title, study %></h2>
 <p>
   <%= study.abstract %>
   <%= link_to "[more]", study %>

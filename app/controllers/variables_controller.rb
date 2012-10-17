@@ -20,6 +20,10 @@ class VariablesController < ApplicationController
     @variable_statistics = @variable.variable_statistics
     @variable_categories = @variable.variable_categories
 
+    @question = @variable.question
+    @question_scales = @question.question_scales unless @question.blank?
+    @question_answers = @question.question_answers unless @question.blank?
+
     # Same Variable in different Groups of the same Study
     if @variable.variable_group.blank?
       @group_variables = []

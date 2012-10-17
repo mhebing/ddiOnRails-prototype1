@@ -22,6 +22,7 @@
 </div>
 
 <div class="span-16 last">
+
 <% unless @variable_statistics.blank? %>
 <div class="span-8">
 <h2>Statistics</h2>
@@ -34,29 +35,51 @@
 <h2>Categories</h2>
 <%= render 'variable_categories/table' %>
 </div>
-
 <% end %>
+
+</div>
+</div>
 
 <hr>
 
-<div class="span-16 last">
-<div>
+<div class="span-24">
+
+<div class="span-12">
 <h2>Variable Comparison</h2>
 <%= render 'comparison' %>
 </div>
 
-
 <% unless @variables.blank? %>
-<hr>
-<div>
+<div class="span-12 last">
 <h2> Variables via Concepts </h2>
 <%= render 'table' %>
-</h2>
 </div>
 <% end %>
 
 </div>
 
+
+<% unless @question.blank? %>
+<hr>
+
+<div class="span-8">
+<div class="box">
+<h2>Question</h2>
+<hr>
+<%= render 'questions/info' %>
 </div>
+</div>
+
+<div class="span-8">
+<h2>Answers</h2>
+<%= render 'question_answers/table' %>
+</div>
+
+<div class="span-8 last">
+<h2>Scales</h2>
+<%= render 'question_scales/table' %>
+</div>
+
+<% end %>
 
 

@@ -9,7 +9,7 @@
   <tr>
     <td><b><%= link_to concept.name, concept %></b></td>
     <td><%= concept.label %></td>
-    <td><%= link_to concept.concept_group.name,
+    <td><%= link_to concept.concept_group.title,
             concept.concept_group unless
             concept.concept_group.blank?%></td>
   </tr>
