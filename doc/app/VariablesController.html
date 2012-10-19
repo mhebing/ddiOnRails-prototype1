@@ -294,7 +294,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 58</span>
+            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@variable</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:variable</span>])
 
@@ -334,7 +334,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 90</span>
+            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@variable</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">destroy</span>
@@ -370,7 +370,7 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 52</span>
+            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
   <span class="ruby-ivar">@variable</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -435,7 +435,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 42</span>
+            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@variable</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">new</span>
 
@@ -475,6 +475,10 @@
   <span class="ruby-ivar">@variable</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@variable_statistics</span> = <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">variable_statistics</span>
   <span class="ruby-ivar">@variable_categories</span> = <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">variable_categories</span>
+
+  <span class="ruby-ivar">@question</span> = <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">question</span>
+  <span class="ruby-ivar">@question_scales</span> = <span class="ruby-ivar">@question</span>.<span class="ruby-identifier">question_scales</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@question</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-ivar">@question_answers</span> = <span class="ruby-ivar">@question</span>.<span class="ruby-identifier">question_answers</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@question</span>.<span class="ruby-identifier">blank?</span>
 
   <span class="ruby-comment"># Same Variable in different Groups of the same Study</span>
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@variable</span>.<span class="ruby-identifier">variable_group</span>.<span class="ruby-identifier">blank?</span>
@@ -518,7 +522,7 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 74</span>
+            <pre><span class="ruby-comment"># File app/controllers/variables_controller.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-ivar">@variable</span> = <span class="ruby-constant">Variable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
